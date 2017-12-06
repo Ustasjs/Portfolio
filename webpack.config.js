@@ -83,6 +83,12 @@ const developmentConfig = {
           },
           {
             loader: "css-loader"
+          },
+          {
+            loader: "postcss-loader",
+            options: {
+              sourceMap: true
+            }
           }
         ]
       },
@@ -94,6 +100,12 @@ const developmentConfig = {
           },
           {
             loader: "css-loader",
+            options: {
+              sourceMap: true
+            }
+          },
+          {
+            loader: "postcss-loader",
             options: {
               sourceMap: true
             }
@@ -122,7 +134,10 @@ const productionConfig = {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
           fallback: "style-loader",
-          use: { loader: "css-loader", options: { minimize: true } }
+          use: [
+            { loader: "css-loader", options: { minimize: true } },
+            "postcss-loader"
+          ]
         })
       },
       {
@@ -132,6 +147,7 @@ const productionConfig = {
           fallback: "style-loader",
           use: [
             { loader: "css-loader", options: { minimize: true } },
+            "postcss-loader",
             "sass-loader"
           ]
         })

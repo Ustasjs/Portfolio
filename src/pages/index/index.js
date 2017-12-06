@@ -1,6 +1,6 @@
-import p from "../../components/makeP";
-import "./index.scss";
-import "normalize.css";
+import 'normalize.css';
+import p from '../../components/makeP';
+import './index.scss';
 
 document.body.appendChild(p);
-console.log("in index.js");
+console.log('in index.js');
