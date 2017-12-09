@@ -19,7 +19,7 @@
     "brace-style": ["error", "1tbs"],
     "indent": [
       "error",
-      4,
+      2,
       {
         "SwitchCase": 1
       }

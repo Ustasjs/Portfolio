@@ -1,37 +1,49 @@
-const webpack = require("webpack");
-const path = require("path");
-const merge = require("webpack-merge");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const webpack = require('webpack');
+const path = require('path');
+const merge = require('webpack-merge');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const PATHS = {
-  source: path.join(__dirname, "src"),
-  build: path.join(__dirname, "build")
+  source: path.join(__dirname, 'src'),
+  build: path.join(__dirname, 'build')
 };
 
 const commonConfig = {
   entry: {
-    index: PATHS.source + "/pages/index/index.js",
-    blog: PATHS.source + "/pages/blog/blog.js"
+    index: PATHS.source + '/pages/index/index.js',
+    blog: PATHS.source + '/pages/blog/blog.js',
+    about: PATHS.source + '/pages/about/about.js',
+    portfolio: PATHS.source + '/pages/portfolio/portfolio.js'
   },
   output: {
     path: PATHS.build,
-    filename: "js/[name].js"
+    filename: 'js/[name].js'
   },
 
   plugins: [
     new HtmlWebpackPlugin({
-      filename: "index.html",
-      chunks: ["index", "common"],
-      template: PATHS.source + "/pages/index/index.pug"
+      filename: 'index.html',
+      chunks: ['index', 'common'],
+      template: PATHS.source + '/pages/index/index.pug'
     }),
     new HtmlWebpackPlugin({
-      filename: "blog.html",
-      chunks: ["blog", "common"],
-      template: PATHS.source + "/pages/blog/blog.pug"
+      filename: 'blog.html',
+      chunks: ['blog', 'common'],
+      template: PATHS.source + '/pages/blog/blog.pug'
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'about.html',
+      chunks: ['about', 'common'],
+      template: PATHS.source + '/pages/about/about.pug'
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'portfolio.html',
+      chunks: ['portfolio', 'common'],
+      template: PATHS.source + '/pages/portfolio/portfolio.pug'
     }),
     new webpack.optimize.CommonsChunkPlugin({
-      name: "common"
+      name: 'common'
     })
   ],
 
@@ -40,31 +52,31 @@ const commonConfig = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: "babel-loader",
+        loader: 'babel-loader',
         options: {
-          presets: ["babel-preset-env"]
+          presets: ['babel-preset-env']
         }
       },
       {
         test: /\.pug$/,
         exclude: /node_modules/,
-        loader: "pug-loader",
+        loader: 'pug-loader',
         options: {
           pretty: true
         }
       },
       {
         test: /\.(jpe?g|png|gif|svg|)$/i,
-        loader: "file-loader",
+        loader: 'file-loader',
         options: {
-          name: "images/[hash].[ext]"
+          name: 'images/[hash].[ext]'
         }
       },
       {
         test: /\.(eot|svg|ttf|woff|woff2)$/,
-        loader: "file-loader",
+        loader: 'file-loader',
         options: {
-          name: "fonts/[hash].[ext]"
+          name: 'fonts/[hash].[ext]'
         }
       }
     ]
@@ -72,20 +84,20 @@ const commonConfig = {
 };
 
 const developmentConfig = {
-  devtool: "source-map",
+  devtool: 'source-map',
   module: {
     rules: [
       {
         test: /\.css$/,
         use: [
           {
-            loader: "style-loader"
+            loader: 'style-loader'
           },
           {
-            loader: "css-loader"
+            loader: 'css-loader'
           },
           {
-            loader: "postcss-loader",
+            loader: 'postcss-loader',
             options: {
               sourceMap: true
             }
@@ -96,22 +108,22 @@ const developmentConfig = {
         test: /\.scss$/,
         use: [
           {
-            loader: "style-loader"
+            loader: 'style-loader'
           },
           {
-            loader: "css-loader",
+            loader: 'css-loader',
             options: {
               sourceMap: true
             }
           },
           {
-            loader: "postcss-loader",
+            loader: 'postcss-loader',
             options: {
               sourceMap: true
             }
           },
           {
-            loader: "sass-loader",
+            loader: 'sass-loader',
             options: {
               sourceMap: true
             }
@@ -133,22 +145,22 @@ const productionConfig = {
       {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
-          fallback: "style-loader",
+          fallback: 'style-loader',
           use: [
-            { loader: "css-loader", options: { minimize: true } },
-            "postcss-loader"
+            { loader: 'css-loader', options: { minimize: true } },
+            'postcss-loader'
           ]
         })
       },
       {
         test: /\.scss$/,
         use: ExtractTextPlugin.extract({
-          publicPath: "../",
-          fallback: "style-loader",
+          publicPath: '../',
+          fallback: 'style-loader',
           use: [
-            { loader: "css-loader", options: { minimize: true } },
-            "postcss-loader",
-            "sass-loader"
+            { loader: 'css-loader', options: { minimize: true } },
+            'postcss-loader',
+            'sass-loader'
           ]
         })
       }
@@ -156,16 +168,16 @@ const productionConfig = {
   },
 
   plugins: [
-    new ExtractTextPlugin("./css/[name].css"),
+    new ExtractTextPlugin('./css/[name].css'),
     new webpack.optimize.UglifyJsPlugin()
   ]
 };
 
 module.exports = function(env) {
-  if (env === "production") {
+  if (env === 'production') {
     return merge(commonConfig, productionConfig);
   }
-  if (env === "development") {
+  if (env === 'development') {
     return merge(commonConfig, developmentConfig);
   }
 };
