@@ -1,0 +1,174 @@
+//main
+
+.section_main {
+  @include bgCover('../../static/images/bg/aboutLaptop.jpg');
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about {
+  opacity: 0.1;
+}
+
+.about_big {
+  width: 90%;
+  fill: $white;
+}
+
+.main__about {
+  position: absolute;
+}
+
+.main__arrow {
+  position: absolute;
+  bottom: 75px;
+}
+
+.arrow {
+  background-color: transparent;
+  border: none;
+  z-index: 2;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+//split
+
+.section_split {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.split__info,
+.split__skills {
+  flex: 1 1;
+  width: 50%;
+}
+
+//info
+
+.info {
+  background-color: $grey;
+}
+
+.info__head {
+  position: relative;
+}
+
+.info__about {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.info__main {
+  margin-right: 80px;
+  margin-left: 80px;
+  margin-bottom: 40px;
+}
+
+.info__main-heading {
+  margin: 0;
+}
+
+.info__second-heading {
+  margin-bottom: 16px;
+}
+
+.info__wrap {
+  margin: 0 auto;
+  margin-top: 35px;
+  margin-bottom: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 445px;
+  height: 390px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.info__content p {
+  margin-bottom: 20px;
+}
+
+//skills
+
+.skills {
+  background-color: $beige;
+}
+
+.skills__heading {
+  max-width: 250px;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 25px;
+}
+
+.skills__main {
+  margin-left: 40px;
+  margin-right: 40px;
+  margin-bottom: 40px;
+}
+
+.skills__circles {
+  margin-top: 35px;
+}
+
+// solid
+.section_solid {
+  position: relative;
+  margin-bottom: -$footerHeight;
+}
+
+.map {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.solid__contacts {
+  position: absolute;
+  top: calc(50% - #{$footerHeight / 2});
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.contacts {
+  background-color: rgba(252, 252, 252, 0.851);
+  border-radius: 5px;
+  padding: 35px;
+}
+
+.contacts__heading {
+  line-height: 1;
+  margin-bottom: 35px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.contacts__item {
+  margin-bottom: 30px;
+}
+
+.contacts__item:last-child {
+  margin-bottom: 0;
+}
+
+.contacts__link {
+  display: flex;
+}
+
+.contacts__logo {
+  margin-right: 15px;
+}

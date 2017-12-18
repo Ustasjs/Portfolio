@@ -1,0 +1,29 @@
+.user__wrap {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.user__img {
+  max-width: 140px;
+  max-height: 140px;
+}
+
+.user__heading {
+  margin-top: 14px;
+  margin-bottom: 14px;
+}
+
+.user__info {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+// user_main
+
+.user_main .user__info {
+  color: $white;
+  font-weight: 300;
+}

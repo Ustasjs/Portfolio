@@ -1,19 +1,18 @@
 <!DOCTYPE html>
-html(lang="en")
+html(lang="ru-RU")
   head
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
     block title
   body
-    nav(class="nav")
-      ul(class="nav__list")
-        li(class="nav__item")
-          a(href='index.html') Авторизация
-        li(class="nav__item")
-          a(href='about.html') Обо мне
-        li(class="nav__item")
-          a(href='blog.html') Блог
-        li(class="nav__item")
-          a(href='portfolio.html') Мои работы
-    block main
+    .wrapper
+      include ../components/header/header.pug
+      .main
+        section.section.section_main
+          block main
+        section.section.section_split
+          block split
+        section.section.section_solid
+          block solid
+      include ../components/footer/footer.pug

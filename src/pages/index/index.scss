@@ -1,0 +1,60 @@
+.wrapper_welcome {
+  @include bgCover('../../static/images/bg/welcomeLaptop.jpg');
+}
+
+.welcome__main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 450px;
+}
+
+.welcome__header {
+  display: flex;
+  justify-content: flex-end;
+  min-height: 70px;
+}
+
+.footer__content {
+  text-align: center;
+  color: $white;
+  font-weight: 300;
+  margin-bottom: 30px;
+}
+
+.auth-button {
+  border-width: 1px;
+  border-color: $white;
+  border-style: solid;
+  border-radius: 5px;
+  background-color: transparent;
+  padding-left: 25px;
+  padding-top: 12px;
+  padding-right: 25px;
+  padding-bottom: 12px;
+  transition: all 0.2s;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 1;
+  }
+}
+
+.header__button {
+  margin-top: 20px;
+  margin-right: 20px;
+}
+
+.auth-button__text {
+  @include font(roboto, 16px, 500, $white);
+}
+
+.hero__main {
+  background-color: rgba(252, 252, 252, 0.851);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  padding: 40px 60px;
+}

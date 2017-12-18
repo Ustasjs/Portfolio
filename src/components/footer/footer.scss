@@ -1,0 +1,40 @@
+.footer {
+  background-color: rgba(55, 62, 66, 0.851);
+  z-index: 1;
+  min-height: $footerHeight;
+}
+
+.footer__top,
+.footer__bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.footer__bottom {
+  border-top: solid 1px #666c6e;
+}
+
+.footer__nav {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.footer__text {
+  color: $white;
+  font-weight: 300;
+}
+
+.footer__info,
+.footer__copy {
+  flex: 1;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.footer__copy {
+  text-align: right;
+}

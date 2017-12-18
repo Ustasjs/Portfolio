@@ -3,6 +3,7 @@ const path = require('path');
 const merge = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const SvgStorePlugin = require('external-svg-sprite-loader/lib/SvgStorePlugin');
 
 const PATHS = {
   source: path.join(__dirname, 'src'),
@@ -44,7 +45,8 @@ const commonConfig = {
     }),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'common'
-    })
+    }),
+    new SvgStorePlugin()
   ],
 
   module: {
@@ -73,7 +75,7 @@ const commonConfig = {
         }
       },
       {
-        test: /\.(eot|svg|ttf|woff|woff2)$/,
+        test: /\.(ttf|woff|woff2)$/,
         loader: 'file-loader',
         options: {
           name: 'fonts/[hash].[ext]'
@@ -125,7 +127,9 @@ const developmentConfig = {
           {
             loader: 'sass-loader',
             options: {
-              sourceMap: true
+              sourceMap: true,
+              data: '@import "globals.scss";',
+              includePaths: [path.resolve(__dirname, 'src')]
             }
           }
         ]
@@ -146,10 +150,7 @@ const productionConfig = {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: [
-            { loader: 'css-loader', options: { minimize: true } },
-            'postcss-loader'
-          ]
+          use: [{ loader: 'css-loader', options: { minimize: true } }, 'postcss-loader']
         })
       },
       {
@@ -160,17 +161,20 @@ const productionConfig = {
           use: [
             { loader: 'css-loader', options: { minimize: true } },
             'postcss-loader',
-            'sass-loader'
+            {
+              loader: 'sass-loader',
+              options: {
+                data: '@import "globals.scss";',
+                includePaths: [path.resolve(__dirname, 'src')]
+              }
+            }
           ]
         })
       }
     ]
   },
 
-  plugins: [
-    new ExtractTextPlugin('./css/[name].css'),
-    new webpack.optimize.UglifyJsPlugin()
-  ]
+  plugins: [new ExtractTextPlugin('./css/[name].css'), new webpack.optimize.UglifyJsPlugin()]
 };
 
 module.exports = function(env) {

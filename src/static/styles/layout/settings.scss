@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+  line-height: 1.42;
+}
+
+body {
+  font-family: roboto, Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: $grafit;
+  background-color: $white;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul li {
+  display: block;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+button {
+  cursor: pointer;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  position: relative;
+}
+
+.main {
+  flex: 1;
+  flex-basis: auto;
+}
+
+.section {
+  min-height: 100vh;
+}
+
+.heading {
+  text-align: center;
+  color: $grafit;
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.heading_big {
+  @include font('bernierregular', 63px, 400, $black);
+}
+
+.heading_medium {
+  @include font('bernierregular', 35px, 400, $grafit);
+}
+
+.heading_main-logo {
+  font-size: 35px;
+  color: $white;
+}
+
+.heading__content {
+  position: relative;
+
+  &:before {
+    @include linesForHeadings();
+    left: -40px;
+  }
+
+  &:after {
+    @include linesForHeadings();
+    right: -40px;
+  }
+}
+
+.heading__content_two-line {
+  &:before {
+    top: 20px;
+  }
+
+  &:after {
+    top: 20px;
+    right: -65px;
+  }
+}

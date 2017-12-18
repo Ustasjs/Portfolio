@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg viewbox="0 0 1000 110" width="120" height="120" preserveaspectratio="none" class="triangles-box">
+    <polygon class="triangles__left" points="0,0 0,111 500,111 500,100"></polygon>
+    <polygon class="triangles__right" points="1000,0 1000,111 500,111 500,100"></polygon>
+</svg>

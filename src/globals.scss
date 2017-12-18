@@ -1,0 +1,40 @@
+//colors
+
+$white: #ffffff;
+$green: #08b09d;
+$darkGreen: #268c8b;
+$grafit: #455a64;
+$black: #373e42;
+$grey: #efeee9;
+$beige: #eeebdf;
+$footerColor: #555b5e;
+
+//other
+
+$footerHeight: 140px;
+
+//mixins
+@mixin font($font, $size, $weight, $color) {
+  font-family: $font, Arial, sans-serif;
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+}
+
+@mixin bgCover($url) {
+  background-image: url($url);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+@mixin linesForHeadings() {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  content: '';
+  width: 20px;
+  height: 5px;
+  background-color: $black;
+  opacity: 0.2;
+}

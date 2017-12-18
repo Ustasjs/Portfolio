@@ -1,0 +1,6 @@
+mixin navList(array, className)
+  nav.nav(class=className ? className : '')
+    ul.nav__list
+      each value, key in array
+        li.nav__item
+          a.nav__link(href=value.path)=value.content
