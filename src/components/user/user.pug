@@ -1,7 +1,11 @@
-mixin user(className, headingMod)
+mixin user(className, headingMod, blog)
   .user(class=className ? className : '')
     .user__wrap
       img.user__img(src=require("../../static/images/heroSmall.jpg"), alt="Мое фото")
-    h2.user__heading.heading(class=headingMod ? headingMod : '') Устюжанин Станислав
-    .user__info Личный сайт веб разработчика
+    if !blog
+      h2.user__heading.heading(class=headingMod ? headingMod : '') Устюжанин Станислав
+      .user__info Личный сайт веб разработчика
+    else
+      h1.user__heading.heading(class=headingMod ? headingMod : '') Блог
+      .user__info Статьи, которые я написал
 

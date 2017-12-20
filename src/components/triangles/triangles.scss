@@ -2,7 +2,7 @@
   position: absolute;
   left: 0;
   right: 0;
-  top: -120px;
+  top: -110px;
   z-index: 1;
 }
 
@@ -18,4 +18,24 @@
 
 .triangles__multicolor .triangles__right {
   fill: $beige;
+}
+
+//singlecolor
+
+.triangles__singlecolor .triangles__left {
+  fill: #faf8f0;
+}
+
+.triangles__singlecolor .triangles__right {
+  fill: #faf8f0;
+}
+
+//blog
+
+.triangles__blog .triangles__left {
+  fill: $white;
+}
+
+.triangles__blog .triangles__right {
+  fill: $white;
 }

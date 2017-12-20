@@ -10,7 +10,12 @@ html(lang="ru-RU")
       include ../components/header/header.pug
       .main
         section.section.section_main
-          block main
+          include ../components/user/user.pug
+          +user('user_main', 'heading_main-logo')
+          .bg-word.bg-word_big.main__bg-word
+            block bg-word
+          button.arrow.main__arrow
+            include ../static/images/otherIcons/arrow_down.svg
         section.section.section_split
           block split
         section.section.section_solid

@@ -27,3 +27,15 @@
   color: $white;
   font-weight: 300;
 }
+
+// user_blog
+
+.user_blog .user__info,
+.user_blog .user__heading {
+  color: $white;
+}
+
+.user_blog .user__heading {
+  margin-bottom: 0;
+  line-height: 1;
+}

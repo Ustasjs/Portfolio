@@ -1,0 +1,175 @@
+//split
+
+.section_split {
+  position: relative;
+}
+
+.projects__head {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: #faf8f0;
+  position: relative;
+}
+
+.projects__bg-word {
+  @include absoluteCenter();
+}
+
+//solid
+
+.feedback {
+  @include bgCover('../../static/images/bg/worksLaptop.jpg');
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.feedback__head {
+  position: relative;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.feedback__bg-word {
+  @include absoluteCenter();
+  width: 200%;
+}
+
+//comments
+
+.comments {
+  margin-right: 200px;
+  margin-left: 200px;
+}
+
+.comments__list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.comments__item {
+  flex: 1 1;
+}
+
+.comments__item:first-child {
+  margin-right: 30px;
+}
+
+.comments__icon {
+  fill: #dde0e0;
+  margin-bottom: 25px;
+}
+
+.comments__content {
+  margin-bottom: 25px;
+}
+
+.comments__user {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.comments__avatar {
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.comments__user-name {
+  color: $green;
+  font-weight: 500;
+}
+
+.comments__user-status {
+  color: $green;
+}
+
+//contact-form
+
+.contact-form {
+  margin-top: 70px;
+  margin-bottom: 70px;
+}
+
+.contact-form__form {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background-color: transparent;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.contact-form__blur {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  filter: blur(1.5px);
+  background-color: rgba(239, 238, 233, 0.4);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.contact-form__input,
+.contact-form__textarea {
+  width: 340px;
+  padding: 15px 20px;
+  border: none;
+  border-radius: 5px;
+}
+
+.contact-form__input {
+  margin-bottom: 20px;
+}
+
+.contact-form__textarea {
+  height: 140px;
+  resize: none;
+}
+
+.contact-form__controls {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.contact-form__button {
+  flex-grow: 1;
+  color: $white;
+  border: none;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: $darkGreen;
+
+  &:hover {
+    background-color: #26bbaa;
+  }
+}
+
+.contact-form__button:first-child {
+  border-right: solid 1px #82b7b9;
+}
+
+.contact-form__button:last-child {
+  border-left: solid 1px #82b7b9;
+}
+
+.feedback__arrow {
+  width: 25px;
+  margin-bottom: 70px;
+  transform: rotate(180deg);
+}

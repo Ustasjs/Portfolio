@@ -2,33 +2,29 @@ extends ../base
 block title
   script(async, defer, src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGxGM4std4Q43_Ya5ubE_UDetPq7WUh0o")
   title About page
-block main
-  include ../../components/user/user
-  +user('user_main', 'heading_main-logo')
-  .about.about_big.main__about
-    include ../../static/images/bg/words/about_header.svg
-  button.arrow.main__arrow
-    include ../../static/images/arrow_down.svg
+block bg-word
+  include ../../static/images/bg/words/about_header.svg
 block split
   include ../../components/triangles/triangles.pug
   +triangles('triangles__multicolor')
   .info.split__info
     .info__head
       h1.info__main-heading.heading.heading_big
-        span.heading__content Обо мне
-      .about.info__about
+        .heading__content Обо мне
+      .bg-word.info__bg-word
         include ../../static/images/bg/words/about_header.svg
     .info__main
       .info__wrap
         img.info__img(src=require("../../static/images/heroBig.jpg"), alt="Мое фото")
       h2.info__second-heading.heading.heading_medium
-        span.heading__content Кто я
+        .heading__content Кто я
       .info__content
         p.info__paragraph Я веб разработчик из Новосибирска. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
         p.info__paragraph Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
   .skills.split__skills
     h2.skills__heading.heading.heading_medium
-      span.heading__content.heading__content_two-line Чем я могу быть вам полезен
+      .heading__content Чем я могу быть 
+      .heading__second-line вам полезен
     .skills__main
       .skills__content
         p.skills__paragraph Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
@@ -40,7 +36,7 @@ block solid
   #map.map
   .contacts.solid__contacts
     h2.contacts__heading.heading.heading_medium
-      span.heading__content Контакты
+      .heading__content Контакты
     ul.contacts__list
       li.contacts__item
         a.contacts__link(href='skype: ov.s.ust@gmail.com')

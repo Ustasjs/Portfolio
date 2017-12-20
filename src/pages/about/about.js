@@ -1,5 +1,6 @@
 import 'normalize.css';
 import '../../static/styles/main.scss';
+import '../../static/styles/base.scss';
 import './about.scss';
 // components
 import '../../components/socials/socials.scss';
