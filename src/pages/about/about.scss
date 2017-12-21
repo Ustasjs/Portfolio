@@ -127,8 +127,23 @@
 
 .contacts__link {
   display: flex;
+  &:before {
+    margin-right: 15px;
+  }
 }
 
-.contacts__logo {
-  margin-right: 15px;
+.contacts__link_skype {
+  &:before {
+    content: url('../../static/images/contactsIcons/skype.svg');
+  }
+}
+.contacts__link_email {
+  &:before {
+    content: url('../../static/images/contactsIcons/envelope.svg');
+  }
+}
+.contacts__link_tel {
+  &:before {
+    content: url('../../static/images/contactsIcons/phone.svg');
+  }
 }

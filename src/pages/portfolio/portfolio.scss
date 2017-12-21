@@ -52,16 +52,18 @@
 
 .comments__item {
   flex: 1 1;
+
+  &:before {
+    content: url('../../static/images/otherIcons/quote-left.svg');
+    display: block;
+    margin-bottom: 25px;
+  }
 }
 
 .comments__item:first-child {
   margin-right: 30px;
 }
 
-.comments__icon {
-  fill: #dde0e0;
-  margin-bottom: 25px;
-}
 
 .comments__content {
   margin-bottom: 25px;

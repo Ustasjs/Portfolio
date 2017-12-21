@@ -41,7 +41,8 @@
 
 .circle-above {
   stroke: #10c1a8;
-  transform: rotate(90, 60, 60);
+  transform: rotate(-90deg);
+  transform-origin: 60px 60px;
 }
 
 .circles__info {
