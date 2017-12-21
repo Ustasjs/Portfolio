@@ -39,17 +39,11 @@ block solid
       .heading__content Контакты
     ul.contacts__list
       li.contacts__item
-        a.contacts__link(href='skype: ov.s.ust@gmail.com')
-          .contacts__logo
-            include ../../static/images/contactsIcons/skype.svg
+        a.contacts__link.contacts__link_skype(href='skype: ov.s.ust@gmail.com')
           span.contacts__text ov.s.ust@gmail.com
       li.contacts__item
-        a.contacts__link(href='mailto: ov.s.ust@gmail.com')
-          .contacts__logo
-            include ../../static/images/contactsIcons/envelope.svg
+        a.contacts__link.contacts__link_email(href='mailto: ov.s.ust@gmail.com')
           span.contacts__text ov.s.ust@gmail.com
       li.contacts__item
-        a.contacts__link(href='tel: +79250331846')
-          .contacts__logo
-            include ../../static/images/contactsIcons/phone.svg
+        a.contacts__link.contacts__link_tel(href='tel: +79250331846')
           span.contacts__text +7 925 033 18 46
