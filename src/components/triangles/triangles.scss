@@ -1,0 +1,21 @@
+.triangles {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -120px;
+  z-index: 1;
+}
+
+.triangles-box {
+  width: 100%;
+}
+
+//multicolor
+
+.triangles__multicolor .triangles__left {
+  fill: $grey;
+}
+
+.triangles__multicolor .triangles__right {
+  fill: $beige;
+}

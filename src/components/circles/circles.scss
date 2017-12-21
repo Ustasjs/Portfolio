@@ -1,0 +1,41 @@
+.circles__row {
+  margin-top: 25px;
+}
+
+.circles__row:first-child {
+  margin-top: 0;
+}
+
+.circles__row:last-child {
+  margin-bottom: 25px;
+}
+
+.circles__heading {
+  text-align: left;
+}
+
+.circles__inner-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.circles__item {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 25px;
+}
+
+.g-circles {
+  stroke-width: 20px;
+}
+
+.circles__info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  @include font(roboto, 13px, 500, #00bfa5);
+}

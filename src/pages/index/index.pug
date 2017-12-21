@@ -1,6 +1,22 @@
-extends ../base
+extends ../baseStartPage.pug
 block title
-  title Auth page
+  title Портфолио
+block header
+  .header.welcome__header
+    button.auth-button.header__button
+      span.auth-button__text Авторизоваться
 block main
-  h1 Auth page
+  .main.welcome__main
+    .hero
+      .hero__main
+        include ../../components/user/user
+        +user()
+        include ../../components/socials/socials.pug
+        +socials('common', 'socials_color_green')
+      include ../../components/nav_list/nav_list.pug
+      -var links = [{path: 'portfolio.html', content:'Мои работы'}, {path:'about.html', content:'Обо мне'}, {path:'blog.html', content:'Блог'}]
+      +navList(links, 'nav_color_green nav_horizontal')
+block footer
+  .footer.welcome__footer
+    .footer__content &copy;Устюжанин Станислав | Создано с любовью в LoftSchool | 2018
     

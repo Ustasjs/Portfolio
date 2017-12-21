@@ -1,0 +1,10 @@
+mixin circles(array)
+  ul.circles
+    each item in array
+      li.circles__row
+        h3.heading.circles__heading=item.name
+        ul.circles__inner-list
+          each skill in item.skills
+            li.circles__item
+              include ../../static/images/circle/circle.svg
+              .circles__info=skill

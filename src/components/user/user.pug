@@ -1,0 +1,7 @@
+mixin user(className, headingMod)
+  .user(class=className ? className : '')
+    .user__wrap
+      img.user__img(src=require("../../static/images/heroSmall.jpg"), alt="Мое фото")
+    h2.user__heading.heading(class=headingMod ? headingMod : '') Устюжанин Станислав
+    .user__info Личный сайт веб разработчика
+

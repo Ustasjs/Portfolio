@@ -1,0 +1,39 @@
+.socials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social__icon {
+  display: block;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: all 0.2s;
+}
+
+.social__icon_gh {
+  margin-right: 30px;
+  margin-left: 30px;
+  margin-top: 2px;
+}
+
+// green
+
+.socials_color_green .social__icon {
+  fill: $green;
+  opacity: 1;
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+// white
+
+.socials_color_white .social__icon {
+  fill: $white;
+  opacity: 0.5;
+  &:hover {
+    opacity: 1;
+  }
+}

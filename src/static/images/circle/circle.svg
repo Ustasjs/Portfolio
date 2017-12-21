@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="120" height="120" class="g-circles">
+ <circle r="45" cx="60" cy="60" stroke="#ccc" fill="none" class="background" />
+ <circle r="45" cx="60" cy="60" stroke="#10c1a8" fill="none" class="sector" />
+</svg>
