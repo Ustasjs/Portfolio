@@ -26,10 +26,22 @@
   justify-content: center;
   align-items: center;
   margin-right: 25px;
+  
 }
 
-.g-circles {
+.circles-svg {
   stroke-width: 20px;
+  fill: none;
+}
+
+.circle-under {
+  stroke: #ccc;
+  
+}
+
+.circle-above {
+  stroke: #10c1a8;
+  transform: rotate(90, 60, 60);
 }
 
 .circles__info {

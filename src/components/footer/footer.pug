@@ -1,12 +1,12 @@
 footer.footer
-  .footer__top
+  .footer__row
     include ../../components/nav_list/nav_list.pug
     -var links = [{path: 'portfolio.html', content:'Мои работы'}, {path:'about.html', content:'Обо мне'}, {path:'blog.html', content:'Блог'}, {path:'index.html', content:'Авторизация'}]
     +navList(links, 'footer__nav nav_horizontal nav_color_white')
     .footer__socials
       include ../../components/socials/socials.pug
       +socials('round', 'socials_color_white')
-  .footer__bottom
+  .footer__row
     .footer__info 
       span.footer__text Я веб-разработчик из Москвы, и этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. 
     .footer__copy 

@@ -1,0 +1,26 @@
+mixin slider(array, className)
+  .slider(class=className ? className : '')
+    .info.slider__info
+      .info__wrap
+        h3.info__heading.heading.heading_medium
+          .heading__content Заголовок
+        .info__stack HTML, CSS, JavaScript
+        a.info__link(href="#")
+          include ../../static/images/otherIcons/link.svg
+          span.info__link-text Посмотреть сайт
+    .slider__main
+      .slider__img-wrap.slider__img-wrap_main
+        img.slider__img(src=require("../../static/images/slider/work-1.png"), alt="Текущий проект")
+    .slider__controls
+      .slider__control
+        .slider__img-wrap
+          img.slider__img(src=require("../../static/images/slider/work-2.png"), alt="Предыдущий проект")
+        .slider__button
+          .slider__arrow-img
+            include ../../static/images/otherIcons/arrow_down.svg
+      .slider__control
+        .slider__img-wrap
+          img.slider__img(src=require("../../static/images/slider/work-3.png"), alt="Следующий проект")
+        .slider__button
+          .slider__arrow-img.slider__arrow-img_down
+            include ../../static/images/otherIcons/arrow_down.svg

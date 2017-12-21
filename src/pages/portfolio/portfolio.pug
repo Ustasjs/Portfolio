@@ -1,6 +1,60 @@
 extends ../base
 block title
   title Portfolio page
-block main
-  h1 Portfolio page
-    
+block bg-word
+  include ../../static/images/bg/words/portfolio_header.svg
+block split
+  include ../../components/triangles/triangles.pug
+  +triangles('triangles__singlecolor')
+  .projects
+    .projects__head
+      h1.projects__heading.heading.heading_big
+        .heading__content Мои работы
+      .bg-word.projects__bg-word
+        include ../../static/images/bg/words/works_header.svg
+  include ../../components/slider/slider.pug
+  +slider()
+block solid
+  .feedback
+    .feedback__head
+      h2.feedback__heading.heading.heading_big
+        .heading__content Что обо мне
+        .heading__second-line говорят
+      .bg-word.feedback__bg-word
+        include ../../static/images/bg/words/about_header.svg
+    .comments
+      ul.comments__list
+        li.comments__item
+          .comments__icon
+            include ../../static/images/otherIcons/quote-left.svg
+          .comments__content Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+          .comments__user
+            .comments__avatar
+              img.comments__img(src=require('../../static/images/comments/kov.jpg'))
+            .comments__name-wrap
+              .comments__user-name Ковальчук Дмитрий
+              .comments__user-status основатель Loftschool
+        li.comments__item
+          .comments__icon
+            include ../../static/images/otherIcons/quote-left.svg
+          .comments__content Этот код выдержит любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!
+          .comments__user
+            .comments__avatar
+              img.comments__img(src=require('../../static/images/comments/sab.jpg'))
+            .comments__name-wrap
+              .comments__user-name Сабанцев Владимир
+              .comments__user-status преподаватель
+    .contact-form
+      form.contact-form__form(action="POST")
+        .contact-form__blur
+        h3.contact-form__heading.heading.heading_medium
+          .heading__content Связаться со мной
+        input.contact-form__input(name="name", required, placeholder='Имя')
+        input.contact-form__input(name="email", type='email', required, placeholder='Email')
+        textarea.contact-form__textarea(name="message", placeholder='Ваше сообщение')
+      .contact-form__controls
+        button.contact-form__button(type="submit") Отправить
+        button.contact-form__button(type="reset") Очистить
+    button.arrow.feedback__arrow
+      include ../../static/images/otherIcons/arrow_down.svg
+

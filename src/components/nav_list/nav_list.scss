@@ -47,4 +47,8 @@
 
 .nav_color_white .nav__item {
   margin-right: 40px;
+
+  &:hover {
+    opacity: 0.7;
+  }
 }
