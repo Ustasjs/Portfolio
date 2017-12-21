@@ -97,30 +97,32 @@
 .contact-form {
   margin-top: 70px;
   margin-bottom: 70px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.contact-form__heading {
+  margin-bottom: 30px;
 }
 
 .contact-form__form {
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
   background-color: transparent;
   padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   position: relative;
+  z-index: 1;
 }
 
 .contact-form__blur {
   position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  filter: blur(1.5px);
-  background-color: rgba(239, 238, 233, 0.4);
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+  height: 100%;
+  width: 100%;
+  filter: blur(70px);
+  background-image: url('../../static/images/bg/worksLaptop.jpg');
+  background-position: center center;
 }
 
 .contact-form__input,
@@ -141,12 +143,12 @@
 }
 
 .contact-form__controls {
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
   overflow: hidden;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  position: relative;
+  z-index: 1;
 }
 
 .contact-form__button {
