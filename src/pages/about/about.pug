@@ -30,7 +30,7 @@ block split
         p.skills__paragraph Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
       .skills__circles
         include ../../components/circles/circles.pug
-        -var arr = [{name: "Frontend", skills: ['HTML5', 'CSS3', 'JavaScript']}, {name: "Backend", skills: ['Node.js', 'Mongo.DB']}, {name: "WorkFlow", skills: ['Git', 'Webpack']}]
+        -var arr = [{name: "Frontend", skills: [{name: 'HTML5', percentage: 70 }, {name:'CSS3', percentage: 80 }, {name: 'JavaScript', percentage: 75}]}, {name: "Backend", skills: [{name:'Node.js', percentage: 35}, {name: 'Mongo.DB', percentage: 20}]}, {name: "WorkFlow", skills: [{name: 'Git', percentage: 70}, {name: 'Webpack', percentage: 70}]}]
         +circles(arr)
 block solid
   #map.map

@@ -6,5 +6,7 @@ mixin circles(array)
         ul.circles__inner-list
           each skill in item.skills
             li.circles__item
-              include ../../static/images/circle/circle.svg
-              .circles__info=skill
+              svg.circles-svg(width="120", height="120", class="circles-svg")
+                circle.circle-under(cx="60", cy="60", r="50")
+                circle.circle-above(cx="60", cy="60", r="50", stroke-dasharray= ((2 * 3.1415 * 50) * skill.percentage / 100) + ' 630')
+              .circles__info=skill.name

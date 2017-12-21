@@ -4,8 +4,7 @@
   min-height: $footerHeight;
 }
 
-.footer__top,
-.footer__bottom {
+.footer__row {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -14,7 +13,7 @@
   margin-right: 30px;
 }
 
-.footer__bottom {
+.footer__row + .footer__row {
   border-top: solid 1px #666c6e;
 }
 
