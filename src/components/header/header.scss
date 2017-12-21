@@ -7,11 +7,11 @@
   top: 0;
   left: 0;
   right: 0;
+  padding: 25px;
 }
 
-.header__socials {
-  margin-left: 25px;
-  margin-top: 22px;
+.burger {
+  cursor: pointer;
 }
 
 .burger__line {
@@ -23,10 +23,4 @@
 
 .burger__line:last-child {
   margin-bottom: 0;
-}
-
-.header__burger {
-  cursor: pointer;
-  margin-right: 30px;
-  margin-top: 30px;
 }

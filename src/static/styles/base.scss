@@ -1,0 +1,41 @@
+//main
+
+.section_main {
+  @include bgCover('../../static/images/bg/aboutLaptop.jpg');
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.user_main {
+  @include absoluteCenter();
+}
+
+.bg-word {
+  opacity: 0.1;
+}
+
+.bg-word_big {
+  @include absoluteCenter();
+  width: 90%;
+  fill: $white;
+}
+
+.main__bg-word {
+  position: absolute;
+}
+
+.main__arrow {
+  margin-bottom: 75px;
+  width: 25px;
+}
+
+.arrow {
+  background-color: transparent;
+  border: none;
+  z-index: 2;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}

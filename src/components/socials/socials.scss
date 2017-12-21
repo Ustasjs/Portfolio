@@ -4,6 +4,10 @@
   align-items: center;
 }
 
+.social__item + .social__item {
+  margin-left: 30px;
+}
+
 .social__icon {
   display: block;
   background-position: center;
@@ -13,8 +17,6 @@
 }
 
 .social__icon_gh {
-  margin-right: 30px;
-  margin-left: 30px;
   margin-top: 2px;
 }
 
