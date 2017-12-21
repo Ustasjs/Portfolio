@@ -20,10 +20,17 @@
 
 .info__head {
   position: relative;
-}
 
-.info__bg-word {
-  @include absoluteCenter();
+  &:before {
+    content: '';
+    background-image: url('../../static/images/bg/words/about_header.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    @include absoluteCenter();
+    opacity: 0.1;
+    width: 100%;
+    height: 150%;
+  }
 }
 
 .info__main {
