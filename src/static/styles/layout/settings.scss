@@ -17,11 +17,9 @@ html {
 }
 
 body {
-  font-family: roboto, Arial, sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  color: $grafit;
+  @include font('roboto', 16px, 400, $grafit);
   background-color: $white;
+  min-width: 320px;
 }
 
 ul {
@@ -44,12 +42,16 @@ button {
   cursor: pointer;
 }
 
+button, input, textarea {
+  @include font('roboto', 16px, 400, $grafit);
+}
+
 .wrapper {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100%;
   width: 100%;
+  min-height: 100%;
   overflow: auto;
   position: relative;
 }
@@ -69,6 +71,10 @@ button {
   font-size: 28px;
   font-weight: 500;
   margin: 0;
+
+  @include smartphone {
+    font-size: 21px;
+  }
 }
 
 .heading_big {

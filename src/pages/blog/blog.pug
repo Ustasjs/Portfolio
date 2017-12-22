@@ -3,15 +3,17 @@ block title
   title Blog page
 block main
   .main
-    section.section-blog
+    section.section.section-blog
       include ../../components/user/user.pug
       +user('user_blog', 'heading_big section-blog__heading', 'blog')
       .bg-word.bg-word_medium.main__bg-word
         include ../../static/images/bg/words/blog_header.svg
+      button.arrow.main__arrow
+            include ../../static/images/otherIcons/arrow_down.svg
     section.section.section_main
       include ../../components/triangles/triangles.pug
       +triangles('triangles__blog')
-      aside.content
+      aside.content.main__content
         ul.content__list
           li.content__item
             a.content__link.content__link_active(href="#first") Самое важное в SASS

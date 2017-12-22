@@ -2,6 +2,10 @@
   background-color: rgba(55, 62, 66, 0.851);
   z-index: 1;
   min-height: $footerHeight;
+
+  @include smartphone {
+    min-height: $footerHeightPhone;
+  }
 }
 
 .footer__row {
@@ -11,6 +15,12 @@
   align-items: center;
   margin-left: 30px;
   margin-right: 30px;
+  @include smartphone {
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
 }
 
 .footer__row + .footer__row {
@@ -22,18 +32,40 @@
   margin-bottom: 20px;
 }
 
+.footer__socials {
+  @include smartphone {
+    margin-bottom: 15px;
+  }
+}
+
 .footer__text {
   color: $white;
   font-weight: 300;
+  @include smartphone {
+    font-size: 13px;
+  }
 }
+
 
 .footer__info,
 .footer__copy {
   flex: 1;
   margin-top: 15px;
   margin-bottom: 15px;
+  @include smartphone {
+    text-align: center;
+  }
+}
+
+.footer__info {
+  @include smartphone {
+    margin-bottom: 0;
+  }
 }
 
 .footer__copy {
   text-align: right;
+  @include smartphone {
+    text-align: center;
+  }
 }

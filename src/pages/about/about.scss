@@ -4,12 +4,21 @@
   display: flex;
   flex-direction: row;
   position: relative;
+
+  @include smartphone {
+    flex-direction: column;
+  }
 }
 
 .split__info,
 .split__skills {
   flex: 1 1;
   width: 50%;
+
+  @include smartphone {
+    flex: none;
+    width: 100%;
+  }
 }
 
 //info
@@ -37,10 +46,17 @@
   margin-right: 80px;
   margin-left: 80px;
   margin-bottom: 40px;
+  @include smartphone {
+    margin-right: 0;
+    margin-left: 0;
+  }
 }
 
 .info__main-heading {
   margin: 0;
+  @include smartphone {
+    margin-top: 15px;
+  }
 }
 
 .info__second-heading {
@@ -59,6 +75,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  @include smartphone {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.info__content {
+  @include smartphone {
+    margin-right: 10px;
+    margin-left: 10px;
+  }
 }
 
 .info__content p {
@@ -77,12 +104,19 @@
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 25px;
+  @include smartphone {
+    margin-top: 30px;
+  }
 }
 
 .skills__main {
   margin-left: 40px;
   margin-right: 40px;
   margin-bottom: 40px;
+  @include smartphone {
+    margin-right: 10px;
+    margin-left: 10px;
+  }
 }
 
 .skills__circles {
@@ -93,6 +127,12 @@
 .section_solid {
   position: relative;
   margin-bottom: -$footerHeight;
+  @include smartphone {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-bottom: -$footerHeightPhone;
+  }
 }
 
 .map {
@@ -101,6 +141,12 @@
   top: 0;
   right: 0;
   bottom: 0;
+  @include smartphone {
+    position: static;
+    flex-grow: 1;
+    order: 2;
+    min-height: 670px;
+  }
 }
 
 .solid__contacts {
@@ -109,12 +155,24 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
+  @include smartphone {
+    position: static;
+    transform: none;
+    order: 1;
+  }
 }
 
 .contacts {
   background-color: rgba(252, 252, 252, 0.851);
   border-radius: 5px;
   padding: 35px;
+
+  @include smartphone {
+    padding-top: 30px;
+    padding-left: 10px; 
+    padding-right: 10px;
+    padding-bottom: 20px;
+  }
 }
 
 .contacts__heading {
@@ -122,10 +180,21 @@
   margin-bottom: 35px;
   margin-left: 100px;
   margin-right: 100px;
+  @include font('bernierregular', 35px, 400, $grafit);
+  text-align: center;
+
+  @include smartphone {
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 15px;
+  }
 }
 
 .contacts__item {
   margin-bottom: 30px;
+  @include smartphone {
+    margin-bottom: 15px;
+  }
 }
 
 .contacts__item:last-child {

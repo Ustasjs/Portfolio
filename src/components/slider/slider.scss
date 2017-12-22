@@ -3,6 +3,10 @@
   flex-direction: column;
   flex-wrap: wrap;
   height: 100vh;
+  @include smartphone {
+    flex-wrap: nowrap;
+    height: 100%;
+  }
 }
 
 //info
@@ -14,6 +18,12 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  @include smartphone {
+    display: block;
+    width: 100%;
+    align-items: center;
+    order: 2;
+  }
 }
 
 .info__heading {
@@ -23,6 +33,12 @@
 .info__wrap {
   text-align: center;
   padding: 80px;
+  @include smartphone {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 .info__stack {
@@ -44,6 +60,11 @@
   align-items: center;
   border-radius: 5px;
 
+  @include smartphone {
+    font-size: 14px;
+    padding: 10px 15px;
+  }
+
   &:hover {
     background-color: $darkGreen;
   }
@@ -63,6 +84,11 @@
   background-color: $beige;
   width: 50%;
   height: 65%;
+  @include smartphone {
+    width: 100%;
+    height: auto;
+    order: 1;
+  }
 }
 
 //controls
@@ -72,6 +98,11 @@
   display: flex;
   width: 50%;
   height: 35%;
+  @include smartphone {
+    width: 100%;
+    height: auto;
+    order: 3;
+  }
 }
 
 .slider__control {

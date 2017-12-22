@@ -10,11 +10,17 @@
   background-color: #faf8f0;
   position: relative;
 
+  @include smartphone {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
   &:before {
     content: '';
     background-image: url('../../static/images/bg/words/works_header.svg');
     background-position: center center;
     background-repeat: no-repeat;
+    background-size: contain; 
     @include absoluteCenter();
     opacity: 0.1;
     width: 100%;
@@ -53,6 +59,10 @@
 .comments {
   margin-right: 200px;
   margin-left: 200px;
+  @include smartphone {
+    margin-right: 10px;
+  margin-left: 10px;
+  }
 }
 
 .comments__list {
@@ -60,15 +70,25 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  @include smartphone {
+    display: block;
+  }
 }
 
 .comments__item {
   flex: 1 1;
 
+  @include smartphone {
+    margin-bottom: 25px;
+  }
+
   &:before {
     content: url('../../static/images/otherIcons/quote-left.svg');
     display: block;
     margin-bottom: 25px;
+    @include smartphone {
+      text-align: center;
+    }
   }
 }
 
@@ -112,10 +132,20 @@
   position: relative;
   overflow: hidden;
   border-radius: 10px;
+  @include smartphone {
+    width: 90%;
+  }
 }
 
 .contact-form__heading {
   margin-bottom: 30px;
+  margin-left: 65px;
+  margin-right: 65px;
+
+  @include smartphone {
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 .contact-form__form {
@@ -139,10 +169,12 @@
 
 .contact-form__input,
 .contact-form__textarea {
-  width: 340px;
   padding: 15px 20px;
   border: none;
   border-radius: 5px;
+  @include smartphone {
+    font-size: 14px;
+  }
 }
 
 .contact-form__input {
@@ -170,6 +202,10 @@
   padding-top: 15px;
   padding-bottom: 15px;
   background-color: $darkGreen;
+
+  @include smartphone {
+    font-size: 14px;
+  }
 
   &:hover {
     background-color: #26bbaa;

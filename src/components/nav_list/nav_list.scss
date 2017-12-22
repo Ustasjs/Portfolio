@@ -41,14 +41,32 @@
     background-color: #009688;
     opacity: 0.851;
   }
+
+  @include smartphone {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
 }
 
 // white
 
+.nav_color_white .nav__item + .nav__item {
+  margin-left: 40px;
+
+  @include smartphone {
+    margin-left: 10px;
+  }
+}
+
 .nav_color_white .nav__item {
-  margin-right: 40px;
 
   &:hover {
     opacity: 0.7;
+  }
+
+  @include smartphone {
+    padding-left: 0px;
+    padding-right: 0px;
+    font-size: 13px;
   }
 }

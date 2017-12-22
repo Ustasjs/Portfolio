@@ -6,6 +6,10 @@
 
 .social__item + .social__item {
   margin-left: 30px;
+
+  @include smartphone {
+    margin-left: 20px;
+  }
 }
 
 .social__icon {

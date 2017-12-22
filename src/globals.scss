@@ -13,6 +13,7 @@ $footerColor: #555b5e;
 //other
 
 $footerHeight: 140px;
+$footerHeightPhone: 280px;
 
 //mixins
 @mixin font($font, $size, $weight, $color) {
@@ -45,4 +46,25 @@ $footerHeight: 140px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+
+//media 
+
+@mixin desktop {
+  @media (min-width: 1250px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin smartphone {
+  @media (max-width: 480px) {
+    @content;
+  }
 }

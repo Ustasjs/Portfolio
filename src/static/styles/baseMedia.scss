@@ -1,0 +1,15 @@
+// smartphone
+
+@media (max-width: 480px) {
+  .main__arrow {
+    margin-bottom: 50px;
+  }
+
+  .section_main {
+    background-image: url('../../static/images/bg/aboutPhone.jpg');
+  }
+
+  .main__bg-word {
+    display: none;
+  }
+}
