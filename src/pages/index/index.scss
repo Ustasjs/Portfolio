@@ -9,7 +9,7 @@
   @include hugeScreen {
     background-image: url('../../static/images/bg/welcomeHugeScreen.jpg');
   }
-  height: 100%;
+  height: 100vh;
 }
 
 .welcome__main {
