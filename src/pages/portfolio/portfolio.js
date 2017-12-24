@@ -10,3 +10,6 @@ import '../../components/nav_list/nav_list.scss';
 import '../../components/user/user.scss';
 import '../../components/triangles/triangles.scss';
 import '../../components/slider/slider.scss';
+// media
+import '../../static/styles/layout/settingsMedia.scss';
+import '../../static/styles/baseMedia.scss';

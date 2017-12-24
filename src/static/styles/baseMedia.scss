@@ -1,0 +1,36 @@
+// smartphone
+
+@media (max-width: 480px) {
+
+  .section_main {
+    background-image: url('../../static/images/bg/bgPhone.jpg');
+  }
+
+  .main__bg-word {
+    display: none;
+  }
+}
+
+//tablet
+
+@media (max-width: 768px) {
+  .section_main {
+    background-image: url('../../static/images/bg/bgTablet.jpg');
+  }
+
+  .main__arrow {
+    margin-bottom: 50px;
+  }
+}
+
+//hugeScreen
+
+@media (min-width: 1300px) {
+  .section_main {
+    background-image: url('../../static/images/bg/bgHugeScreen.jpg');
+  }
+
+  .bg-word_big {
+    width: 70%;
+  }
+}

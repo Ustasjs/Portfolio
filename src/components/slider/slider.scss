@@ -3,6 +3,10 @@
   flex-direction: column;
   flex-wrap: wrap;
   height: 100vh;
+  @include tablet {
+    flex-wrap: nowrap;
+    height: 100%;
+  }
 }
 
 //info
@@ -14,6 +18,12 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  @include tablet {
+    display: block;
+    width: 100%;
+    align-items: center;
+    order: 2;
+  }
 }
 
 .info__heading {
@@ -23,6 +33,22 @@
 .info__wrap {
   text-align: center;
   padding: 80px;
+
+  @include hugeScreen {
+    padding-left: 25%;
+    padding-right: 25%
+  }
+
+  @include tablet {
+    padding: 50px 100px;
+  }
+
+  @include smartphone {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 .info__stack {
@@ -44,6 +70,14 @@
   align-items: center;
   border-radius: 5px;
 
+  @include tablet {
+    padding: 10px 15px;
+  }
+
+  @include smartphone {
+    font-size: 14px;
+  }
+
   &:hover {
     background-color: $darkGreen;
   }
@@ -63,6 +97,15 @@
   background-color: $beige;
   width: 50%;
   height: 65%;
+  @include tablet {
+    width: 100%;
+    height: 530px;;
+    order: 1;
+  }
+
+  @include smartphone {
+    height: auto;
+  }
 }
 
 //controls
@@ -72,6 +115,15 @@
   display: flex;
   width: 50%;
   height: 35%;
+  @include tablet {
+    width: 100%;
+    height: 215px;;
+    order: 3;
+  }
+
+  @include smartphone {
+    height: auto;
+  }
 }
 
 .slider__control {
@@ -109,12 +161,19 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  background-color: rgba(195, 193, 189, 0.7);
   transition: all 0.3s;
 
   &:hover {
     background-color: rgba(195, 193, 189, 0.2);
   }
+}
+
+.slider__button_down {
+  background-color: rgba(195, 193, 189, 0.7);
+}
+
+.slider__button_up {
+  background-color: rgba(195, 193, 189, 0.5);
 }
 
 .slider__arrow-img {

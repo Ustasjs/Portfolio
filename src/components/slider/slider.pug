@@ -15,12 +15,12 @@ mixin slider(array, className)
       .slider__control
         .slider__img-wrap
           img.slider__img(src=require("../../static/images/slider/work-2.png"), alt="Предыдущий проект")
-        .slider__button
+        .slider__button.slider__button_up
           .slider__arrow-img
             include ../../static/images/otherIcons/arrow_down.svg
       .slider__control
         .slider__img-wrap
           img.slider__img(src=require("../../static/images/slider/work-3.png"), alt="Следующий проект")
-        .slider__button
+        .slider__button.slider__button_down
           .slider__arrow-img.slider__arrow-img_down
             include ../../static/images/otherIcons/arrow_down.svg

@@ -1,5 +1,15 @@
 .wrapper_welcome {
   @include bgCover('../../static/images/bg/welcomeLaptop.jpg');
+  @include smartphone {
+    background-image: url('../../static/images/bg/bgPhone.jpg');
+  }
+  @include tablet {
+    background-image: url('../../static/images/bg/welcomeTablet.jpg');
+  }
+  @include hugeScreen {
+    background-image: url('../../static/images/bg/welcomeHugeScreen.jpg');
+  }
+  height: 100vh;
 }
 
 .welcome__main {
@@ -13,6 +23,17 @@
   display: flex;
   justify-content: flex-end;
   min-height: 70px;
+  padding: 20px;
+
+  @include hugeScreen {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+
+  @include smartphone {
+    justify-content: center;
+    padding: 10px;
+  }
 }
 
 .footer__content {
@@ -20,6 +41,14 @@
   color: $white;
   font-weight: 300;
   margin-bottom: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.footer__element {
+  @include smartphone {
+    display: block;
+  }
 }
 
 .auth-button {
@@ -43,11 +72,6 @@
   }
 }
 
-.header__button {
-  margin-top: 20px;
-  margin-right: 20px;
-}
-
 .auth-button__text {
   @include font(roboto, 16px, 500, $white);
 }
@@ -57,4 +81,9 @@
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
   padding: 40px 60px;
+
+  @include smartphone {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
 }

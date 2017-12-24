@@ -4,12 +4,35 @@
   display: flex;
   flex-direction: row;
   position: relative;
+
+  @include tablet {
+    flex-direction: column;
+  }
 }
 
 .split__info,
 .split__skills {
   flex: 1 1;
   width: 50%;
+
+  @include tablet {
+    flex: none;
+    width: 100%;
+  }
+}
+
+.split__info {
+  @include specialHugeScreen {
+    display: flex;
+    flex-direction: row;
+    align-items: space-between;
+  }
+  @include tablet {
+    padding-top: 50px;
+  }
+  @include smartphone {
+    padding-top: 0;
+  }
 }
 
 //info
@@ -30,17 +53,44 @@
     opacity: 0.1;
     width: 100%;
     height: 150%;
+
+    @include specialHugeScreen {
+      background-position: center 250px;
+      width: 90%;
+    }
   }
 }
 
 .info__main {
-  margin-right: 80px;
-  margin-left: 80px;
+  margin-right: 13.3%;
+  margin-left: 13.3%;
   margin-bottom: 40px;
+  @include specialHugeScreen {
+    margin-right: 20px;
+    margin-left: 0;
+  }
+
+  @include tablet {
+    margin-right: 19%;
+    margin-left: 19%;
+  }
+  @include smartphone {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
+.info__head, .info__main {
+  @include specialHugeScreen {
+    flex: 1 1;
+  }
 }
 
 .info__main-heading {
   margin: 0;
+  @include smartphone {
+    margin-top: 15px;
+  }
 }
 
 .info__second-heading {
@@ -48,17 +98,31 @@
 }
 
 .info__wrap {
-  margin: 0 auto;
   margin-top: 35px;
   margin-bottom: 25px;
   margin-left: auto;
   margin-right: auto;
-  width: 445px;
+  width: 100%;
   height: 390px;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
+  @include tablet {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.info__content {
+  @include tablet {
+    font-size: 14px;
+  }
+
+  @include smartphone {
+    margin-right: 10px;
+    margin-left: 10px;
+  }
 }
 
 .info__content p {
@@ -77,12 +141,29 @@
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 25px;
+  @include smartphone {
+    margin-top: 30px;
+  }
 }
 
 .skills__main {
   margin-left: 40px;
   margin-right: 40px;
   margin-bottom: 40px;
+  @include tablet {
+    margin-right: 19%;
+    margin-left: 19%;
+  }
+  @include smartphone {
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+}
+
+.skills__content {
+  @include tablet {
+    font-size: 14px;
+  }
 }
 
 .skills__circles {
@@ -92,7 +173,12 @@
 // solid
 .section_solid {
   position: relative;
-  margin-bottom: -$footerHeight;
+  
+  @include smartphone {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
 }
 
 .map {
@@ -101,20 +187,38 @@
   top: 0;
   right: 0;
   bottom: 0;
+  @include smartphone {
+    position: static;
+    flex-grow: 1;
+    order: 2;
+  }
 }
 
 .solid__contacts {
   position: absolute;
-  top: calc(50% - #{$footerHeight / 2});
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
+  
+  @include smartphone {
+    position: static;
+    transform: none;
+    order: 1;
+  }
 }
 
 .contacts {
   background-color: rgba(252, 252, 252, 0.851);
   border-radius: 5px;
   padding: 35px;
+
+  @include smartphone {
+    padding-top: 30px;
+    padding-left: 10px; 
+    padding-right: 10px;
+    padding-bottom: 20px;
+  }
 }
 
 .contacts__heading {
@@ -122,10 +226,21 @@
   margin-bottom: 35px;
   margin-left: 100px;
   margin-right: 100px;
+  @include font('bernierregular', 35px, 400, $grafit);
+  text-align: center;
+
+  @include smartphone {
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 15px;
+  }
 }
 
 .contacts__item {
   margin-bottom: 30px;
+  @include smartphone {
+    margin-bottom: 15px;
+  }
 }
 
 .contacts__item:last-child {

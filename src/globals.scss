@@ -10,9 +10,6 @@ $grey: #efeee9;
 $beige: #eeebdf;
 $footerColor: #555b5e;
 
-//other
-
-$footerHeight: 140px;
 
 //mixins
 @mixin font($font, $size, $weight, $color) {
@@ -45,4 +42,31 @@ $footerHeight: 140px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+
+//media 
+
+@mixin specialHugeScreen {
+  @media (min-width: 1600px) {
+    @content;
+  }
+}
+
+@mixin hugeScreen {
+  @media (min-width: 1300px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin smartphone {
+  @media (max-width: 480px) {
+    @content;
+  }
 }
