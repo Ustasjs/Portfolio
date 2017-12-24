@@ -10,10 +10,6 @@ $grey: #efeee9;
 $beige: #eeebdf;
 $footerColor: #555b5e;
 
-//other
-
-$footerHeight: 140px;
-$footerHeightPhone: 280px;
 
 //mixins
 @mixin font($font, $size, $weight, $color) {
@@ -51,8 +47,14 @@ $footerHeightPhone: 280px;
 
 //media 
 
-@mixin desktop {
-  @media (min-width: 1250px) {
+@mixin specialHugeScreen {
+  @media (min-width: 1600px) {
+    @content;
+  }
+}
+
+@mixin hugeScreen {
+  @media (min-width: 1300px) {
     @content;
   }
 }

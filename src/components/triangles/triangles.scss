@@ -5,8 +5,16 @@
   top: -120px;
   z-index: 1;
 
+  @include hugeScreen {
+    top: -150px;
+  }
+
   @include smartphone {
     top: -30px;
+  }
+
+  @include tablet {
+    top: -70px;
   }
 }
 
@@ -14,8 +22,16 @@
   width: 100%;
   height: 120px;
 
+  @include hugeScreen {
+    height: 150px;
+  }
+
   @include smartphone {
     height: 30px;
+  }
+
+  @include tablet {
+    height: 70px;
   }
 }
 
@@ -28,7 +44,7 @@
 .triangles__multicolor .triangles__right {
   fill: $beige;
 
-  @include smartphone {
+  @include tablet {
     fill: $grey;
   }
 }

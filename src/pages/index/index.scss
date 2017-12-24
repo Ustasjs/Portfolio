@@ -1,7 +1,13 @@
 .wrapper_welcome {
   @include bgCover('../../static/images/bg/welcomeLaptop.jpg');
   @include smartphone {
-    background-image: url('../../static/images/bg/aboutPhone.jpg');
+    background-image: url('../../static/images/bg/bgPhone.jpg');
+  }
+  @include tablet {
+    background-image: url('../../static/images/bg/welcomeTablet.jpg');
+  }
+  @include hugeScreen {
+    background-image: url('../../static/images/bg/welcomeHugeScreen.jpg');
   }
   height: 100%;
 }
@@ -19,6 +25,11 @@
   min-height: 70px;
   padding: 20px;
 
+  @include hugeScreen {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+
   @include smartphone {
     justify-content: center;
     padding: 10px;
@@ -30,6 +41,8 @@
   color: $white;
   font-weight: 300;
   margin-bottom: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .footer__element {

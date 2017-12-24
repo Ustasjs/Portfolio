@@ -20,6 +20,7 @@
 .user__heading {
   margin-top: 14px;
   margin-bottom: 14px;
+  white-space: nowrap;
 
   @include smartphone {
     margin-bottom: 5px;

@@ -57,11 +57,15 @@
 //comments
 
 .comments {
-  margin-right: 200px;
-  margin-left: 200px;
+  margin-right: 16.66%;
+  margin-left: 16.66%;
+  @include tablet {
+    margin-right: 25px;
+    margin-left: 25px;
+  }
   @include smartphone {
     margin-right: 10px;
-  margin-left: 10px;
+    margin-left: 10px;
   }
 }
 
@@ -69,7 +73,6 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
   @include smartphone {
     display: block;
   }
@@ -110,6 +113,7 @@
 .comments__avatar {
   width: 80px;
   height: 80px;
+  min-width: 80px;
   overflow: hidden;
   border-radius: 50%;
   margin-right: 20px;
@@ -141,6 +145,10 @@
   margin-bottom: 30px;
   margin-left: 65px;
   margin-right: 65px;
+
+  @include tablet {
+    margin-bottom: 15px;
+  }
 
   @include smartphone {
     margin-left: 0;
@@ -224,4 +232,8 @@
   width: 25px;
   margin-bottom: 70px;
   transform: rotate(180deg);
+
+  @include tablet {
+    margin-bottom: 50px;
+  }
 }

@@ -13,3 +13,27 @@
     font-size: 35px;
   }
 }
+
+//tablet
+
+@media (max-width: 768px) {
+  .heading {
+    font-size: 21px;
+  }
+  
+  .heading_big {
+    font-size: 49px;
+  }
+
+  .heading_medium {
+    font-size: 30px;
+  }
+}
+
+//huge screen
+
+@media (min-width: 1300px) {
+  .section {
+    min-height: 650px;
+  }
+}
