@@ -13,9 +13,6 @@
 }
 
 .welcome__main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   min-height: 450px;
 }
 
@@ -76,6 +73,14 @@
   @include font(roboto, 16px, 500, $white);
 }
 
+.main__hero, .main__auth {
+  @include absoluteCenter;
+}
+
+.main__hero {
+  z-index: 2;
+}
+
 .hero__main {
   background-color: rgba(252, 252, 252, 0.851);
   border-top-left-radius: 5px;
@@ -86,4 +91,8 @@
     padding-left: 40px;
     padding-right: 40px;
   }
+}
+
+.main__auth {
+  z-index: 1;
 }
