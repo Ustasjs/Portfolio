@@ -26,14 +26,14 @@ $footerColor: #555b5e;
   background-position: center center;
 }
 
-@mixin linesForHeadings() {
+@mixin linesForHeadings($color) {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   content: '';
   width: 20px;
   height: 5px;
-  background-color: $black;
+  background-color: $color;
   opacity: 0.2;
 }
 

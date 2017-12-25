@@ -7,6 +7,14 @@ html(lang="ru-RU")
     block title
   body
     .wrapper
+      .modal#modal
+        .modal__left
+        include ../components/nav_list/nav_list.pug
+        -var links = [{path: 'portfolio.html', content:'Мои работы'}, {path:'about.html', content:'Обо мне'}, {path:'blog.html', content:'Блог'}, {path:'index.html', content:'Авторизация'}]
+        +navList(links, 'modal__nav nav_vertical modal__nav_hidden')
+        .modal__right
+      include ../components/burger_menu/burger_menu.pug
+      +burger('burger_header')
       include ../components/header/header.pug
       .main
         section.section.section_main
