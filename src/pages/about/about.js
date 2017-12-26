@@ -10,6 +10,9 @@ import '../../components/nav_list/nav_list.scss';
 import '../../components/user/user.scss';
 import '../../components/circles/circles.scss';
 import '../../components/triangles/triangles.scss';
+// media
+import '../../static/styles/layout/settingsMedia.scss';
+import '../../static/styles/baseMedia.scss';
 
 import Map from '../../scripts/map';
 

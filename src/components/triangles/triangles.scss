@@ -2,12 +2,37 @@
   position: absolute;
   left: 0;
   right: 0;
-  top: -110px;
+  top: -120px;
   z-index: 1;
+
+  @include hugeScreen {
+    top: -150px;
+  }
+
+  @include smartphone {
+    top: -30px;
+  }
+
+  @include tablet {
+    top: -70px;
+  }
 }
 
 .triangles-box {
   width: 100%;
+  height: 120px;
+
+  @include hugeScreen {
+    height: 150px;
+  }
+
+  @include smartphone {
+    height: 30px;
+  }
+
+  @include tablet {
+    height: 70px;
+  }
 }
 
 //multicolor
@@ -18,6 +43,10 @@
 
 .triangles__multicolor .triangles__right {
   fill: $beige;
+
+  @include tablet {
+    fill: $grey;
+  }
 }
 
 //singlecolor
