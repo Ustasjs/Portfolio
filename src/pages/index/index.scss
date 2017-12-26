@@ -14,6 +14,34 @@
 
 .welcome__main {
   min-height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flip-container {
+  perspective: 1000;
+}
+
+.flip {
+  transform-style: preserve-3d;
+  position: relative;
+  width: 425px;
+  height: 420px;
+  transition: all 0.3s;
+  transform-origin: center center;
+  @include tablet {
+    width: 360px;
+    height: 410px;
+  }
+  @include smartphone {
+    width: 320px;
+    height: 400px;
+  }
+}
+
+.flip-container_auth .flip {
+  transform: rotateY(180deg);
 }
 
 .welcome__header {
@@ -69,16 +97,23 @@
   }
 }
 
+.auth-button_hidden {
+  display: none;
+}
+
 .auth-button__text {
   @include font(roboto, 16px, 500, $white);
 }
 
 .main__hero, .main__auth {
-  @include absoluteCenter;
+  backface-visibility: hidden;
 }
 
 .main__hero {
   z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .hero__main {
@@ -93,6 +128,194 @@
   }
 }
 
+// auth
+
 .main__auth {
-  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: rotateY(180deg);
+}
+
+.auth__main {
+  background-color: rgba(252, 252, 252, 0.851);
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  padding: 40px 20px;
+
+  @include smartphone {
+    padding-top: 35px;
+    padding-bottom: 35px;
+  }
+}
+
+.auth__heading {
+  margin-bottom: 25px;
+  margin-right: 93px;
+  margin-left: 93px;
+  @include tablet {
+    margin-right: 75px;
+    margin-left: 75px;
+  }
+
+  @include smartphone {
+    margin-right: 55px;
+    margin-left: 55px;
+  }
+}
+
+.auth__form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.auth__input-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  &:before {
+    background-color: $beige;
+    padding: 12px 15px;;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+}
+
+.auth__input-wrap_login {
+  &:before {
+    content: url('../../static/images/otherIcons/login.svg');
+  }
+}
+
+.auth__input-wrap_password {
+  &:before {
+    content: url('../../static/images/otherIcons/password.svg');
+  }
+}
+
+.auth__input-wrap {
+  margin-bottom: 20px;
+}
+
+
+.auth__input {
+  display: block;
+  padding: 15px 15px;
+  border: none;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  flex-grow: 1;
+}
+
+.auth__question, .auth__question-wrap {
+  margin-top: 10px;
+}
+
+// checkbox
+
+.auth__label {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth__checkbox {
+  display: none;
+}
+
+.auth__custom-checkbox {
+  width: 20px;
+  height: 20px;
+  background-color: $lightgreen;
+  border-radius: 2px;
+  margin-right: 10px;
+  position: relative;
+}
+
+.auth__checkbox:checked + .auth__custom-checkbox:before {
+  content: url('../../static/images/otherIcons/check.svg');
+  width: 15px;
+  height: 16px;
+  position: absolute;
+  left: 3px;
+  top: 0;
+}
+
+// radio
+
+.auth__question {
+  font-weight: 700;
+}
+
+.auth__question-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth__custom-radio {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 10px;
+  position: relative;
+  border: 1px solid #cdcdcd;
+  position: relative;
+}
+
+.auth__radio {
+  display: none;
+}
+
+.auth__radio:checked + .auth__custom-radio:before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: $lightgreen;
+  @include absoluteCenter();
+}
+
+.auth__radio:checked ~ .auth__label-text {
+  color: $lightgreen;
+}
+
+.auth__label + .auth__label {
+  margin-left: 40px;
+}
+
+// buttons
+
+.auth__buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  overflow: hidden;
+}
+
+.auth__button {
+  flex: 1 1;
+  background-color: $green;
+  font-weight: 500;
+  color: $white;
+  padding-top: 10px; 
+  padding-bottom: 10px; 
+  border: none;
+  border-right: 1px solid #74cac3;
+}
+
+.auth__button + .auth__button {
+  border-left: 1px solid #74cac3;
+}
+
+.auth__button:last-child {
+  border-right: none;
 }

@@ -3,39 +3,47 @@ block title
   title Портфолио
 block header
   .header.welcome__header
-    button.auth-button.header__button
+    button#authButton.auth-button.header__button
       span.auth-button__text Авторизоваться
 block main
   .main.welcome__main
-      .hero.main__hero
-        .hero__main
-          include ../../components/user/user
-          +user()
-          include ../../components/socials/socials.pug
-          +socials('common', 'socials_color_green')
-        include ../../components/nav_list/nav_list.pug
-        -var links = [{path: 'portfolio.html', content:'Мои работы'}, {path:'about.html', content:'Обо мне'}, {path:'blog.html', content:'Блог'}]
-        +navList(links, 'nav_color_green nav_horizontal')
-      .auth.main__auth
-        .auth__main
-          h2.heading.auth__heading.heading_medium
-            .heading__content Авторизуйтесь
-          form.auth__form(action="POST")
-            input.auth__input(placeholder="Логин")
-            input.auth__input(placeholder="Пароль") 
-            label.auth__label
-              input.auth__checkbox(type="checkbox")
-              span.auth__label-text Я человек
-            .auth__question Вы точно не робот?
-            label.auth__label
-             .input.auth__radio(type="checkbox", name="question", value="Yes")
-             span.auth__label-text Да
-            label.auth__label
-             .input.auth__radio(type="checkbox", name="question", value="No")
-             span.auth__label-text Не уверен
-        .auth__buttons
-          button.auth__button На главную
-          button.auth__button Войти
+    #flipper.flip-container
+      .flip
+        .hero.main__hero
+          .hero__main
+            include ../../components/user/user
+            +user()
+            include ../../components/socials/socials.pug
+            +socials('common', 'socials_color_green')
+          include ../../components/nav_list/nav_list.pug
+          -var links = [{path: 'portfolio.html', content:'Мои работы'}, {path:'about.html', content:'Обо мне'}, {path:'blog.html', content:'Блог'}]
+          +navList(links, 'nav_color_green nav_horizontal')
+        .auth.main__auth
+          .auth__main
+            h2.heading.auth__heading.heading_medium
+              .heading__content Авторизуйтесь
+            form.auth__form(action="POST")
+              .auth__input-wrap.auth__input-wrap_login
+                input.auth__input(placeholder="Логин")
+              .auth__input-wrap.auth__input-wrap_password
+                input.auth__input(placeholder="Пароль") 
+              label.auth__label
+                input.auth__checkbox(type="checkbox")
+                .auth__custom-checkbox
+                span.auth__label-text Я человек
+              .auth__question Вы точно не робот?
+              .auth__question-wrap
+                label.auth__label
+                  input.auth__radio(type="radio", name="question", value="Yes")
+                  .auth__custom-radio
+                  span.auth__label-text Да
+                label.auth__label
+                  input.auth__radio(type="radio", name="question", value="No")
+                  .auth__custom-radio
+                  span.auth__label-text Не уверен
+          .auth__buttons
+            button.auth__button На главную
+            button.auth__button Войти
 block footer
   .footer.welcome__footer
     .footer__content 
