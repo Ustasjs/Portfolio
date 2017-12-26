@@ -13,6 +13,8 @@ block split
   include ../../components/slider/slider.pug
   +slider()
 block solid
+  .solid__background
+    img.solid__img(src=require('../../static/images/bg/worksDesctop.jpg'))
   .feedback
     .feedback__head
       h2.feedback__heading.heading.heading_big
@@ -40,8 +42,8 @@ block solid
             .comments__name-wrap
               .comments__user-name Сабанцев Владимир
               .comments__user-status преподаватель
-    .contact-form
-      .contact-form__blur
+    #contact-form.contact-form
+      #blur.contact-form__blur
       form#contacts.contact-form__form(action="POST")
         h3.contact-form__heading.heading.heading_medium
           .heading__content Связаться со мной

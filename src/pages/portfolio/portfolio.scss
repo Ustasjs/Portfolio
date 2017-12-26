@@ -30,8 +30,30 @@
 
 //solid
 
+.section_solid {
+  position: relative;
+  overflow: hidden;
+}
+
+.solid__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  min-width: 900px;
+  z-index: -1;
+}
+
+.solid__img {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 100%;
+}
+
 .feedback {
-  @include bgCover('../../static/images/bg/worksLaptop.jpg');
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -59,6 +81,7 @@
 .comments {
   margin-right: 16.66%;
   margin-left: 16.66%;
+  margin-bottom: 70px;
   @include tablet {
     margin-right: 25px;
     margin-left: 25px;
@@ -131,8 +154,6 @@
 //contact-form
 
 .contact-form {
-  margin-top: 70px;
-  margin-bottom: 70px;
   position: relative;
   overflow: hidden;
   border-radius: 10px;
@@ -170,9 +191,8 @@
   position: absolute;
   height: 100%;
   width: 100%;
-  filter: blur(70px);
-  background-image: url('../../static/images/bg/worksLaptop.jpg');
-  background-position: center center;
+  filter: blur(20px);
+  background: url('../../static/images/bg/worksDesctop.jpg') center no-repeat;
 }
 
 .contact-form__input,
@@ -204,7 +224,7 @@
 }
 
 .contact-form__button {
-  flex-grow: 1;
+  flex: 1 1;
   color: $white;
   border: none;
   padding-top: 15px;
@@ -230,6 +250,7 @@
 
 .feedback__arrow {
   width: 25px;
+  margin-top: 70px;
   margin-bottom: 70px;
   transform: rotate(180deg);
 

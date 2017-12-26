@@ -319,3 +319,8 @@
 .auth__button:last-child {
   border-right: none;
 }
+
+.auth__button:hover {
+  background-color: #009688;
+  opacity: 0.851;
+}

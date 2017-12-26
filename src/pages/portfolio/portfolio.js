@@ -13,8 +13,11 @@ import '../../components/slider/slider.scss';
 import '../../components/burger_menu/burger_menu.scss';
 // component scripts
 import burger from '../../components/burger_menu/burger_menu.js';
+// scripts
+import blur from '../../scripts/blur.js';
 // media
 import '../../static/styles/layout/settingsMedia.scss';
 import '../../static/styles/baseMedia.scss';
 
 burger.init();
+blur.init();
