@@ -17,12 +17,12 @@ html(lang="ru-RU")
       +burger('burger_header')
       include ../components/header/header.pug
       .main
-        section.section.section_main
+        section#headSection.section.section_main
           include ../components/user/user.pug
           +user('user_main', 'heading_main-logo')
           .bg-word.bg-word_big.main__bg-word
             block bg-word
-          button.arrow.main__arrow
+          button#arrowDown.arrow.main__arrow
             include ../static/images/otherIcons/arrow_down.svg
         section.section.section_split
           block split

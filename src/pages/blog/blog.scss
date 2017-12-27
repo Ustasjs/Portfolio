@@ -133,6 +133,8 @@
 }
 
 .main__content {
+  width: 300px;
+  min-width: 300px;
   @include tablet {
     position: fixed;
     top: 0;
@@ -140,12 +142,12 @@
     bottom: 0;
     background-color: $lightgreen;
     z-index: 2;
-    width: 300px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
     box-shadow: 3px 0px 3px 0px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
 
     &:before {
       content: '';
@@ -161,7 +163,21 @@
   }
 }
 
+.main__content_hidden {
+  left: -350px;
+}
+
 .main__content_active {
+  left: 0;
+}
+
+.content__list {
+  width: 300px;
+}
+
+.content__list_fixed {
+  position: fixed;
+  top: 70px;
   left: 0;
 }
 

@@ -11,7 +11,12 @@ import '../../components/triangles/triangles.scss';
 import '../../components/burger_menu/burger_menu.scss';
 // component scripts
 import burger from '../../components/burger_menu/burger_menu.js';
+// scripts
+import arrowScroll from '../../scripts/arrow_scroll';
+import asideMenu from '../../scripts/aside_menu';
 // media
 import '../../static/styles/layout/settingsMedia.scss';
 
 burger.init();
+arrowScroll.init();
+asideMenu.init();
