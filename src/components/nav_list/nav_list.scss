@@ -45,6 +45,28 @@
   }
 }
 
+.nav_vertical .nav__text:hover{
+  position: relative;
+  &:before, &:after {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    content: '';
+    width: 20px;
+    height: 5px;
+    background-color: $white;
+  }
+
+  &:before {
+    left: -35px;
+  }
+
+  &:after {
+    right: -35px;
+  }
+  
+}
+
 //green
 
 .nav_color_green .nav__list {
