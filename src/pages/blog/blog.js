@@ -14,9 +14,11 @@ import burger from '../../components/burger_menu/burger_menu.js';
 // scripts
 import arrowScroll from '../../scripts/arrow_scroll';
 import asideMenu from '../../scripts/aside_menu';
+import parallaxScroll from '../../scripts/parallax_scroll';
 // media
 import '../../static/styles/layout/settingsMedia.scss';
 
 burger.init();
 arrowScroll.init();
 asideMenu.init();
+parallaxScroll.init();

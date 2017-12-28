@@ -1,14 +1,16 @@
 .wrapper_welcome {
-  @include bgCover('../../static/images/bg/welcomeLaptop.jpg');
+  // @include bgCover('../../static/images/bg/welcomeLaptop.jpg');
+  @include tablet {
+    @include bgCover('../../static/images/bg/welcomeTablet.jpg');
+  }
+  
   @include smartphone {
     background-image: url('../../static/images/bg/bgPhone.jpg');
   }
-  @include tablet {
-    background-image: url('../../static/images/bg/welcomeTablet.jpg');
-  }
-  @include hugeScreen {
-    background-image: url('../../static/images/bg/welcomeHugeScreen.jpg');
-  }
+  
+  // @include hugeScreen {
+  //   background-image: url('../../static/images/bg/welcomeHugeScreen.jpg');
+  // }
   height: 100vh;
 }
 

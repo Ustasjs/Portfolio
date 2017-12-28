@@ -1,0 +1,37 @@
+.parallax {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  background-image: url('../../static/images/parallaxMove/parallax-bg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top;
+  z-index: -1;
+  @include tablet {
+    display: none;
+  }
+}
+
+.parallax_layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  will-change: transform;
+}
+
+.parallax__img {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -100px;
+  max-width: 110%;
+
+  @include desctopForParallax {
+    max-width: 150%;
+  }
+}

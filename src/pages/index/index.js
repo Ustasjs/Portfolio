@@ -5,9 +5,12 @@ import './index.scss';
 import '../../components/user/user.scss';
 import '../../components/socials/socials.scss';
 import '../../components/nav_list/nav_list.scss';
+import '../../components/parallaxMove/parallax.scss';
+import parallax from '../../components/parallaxMove/parallax.js';
 // media
 import '../../static/styles/layout/settingsMedia.scss';
 // scripts
 import flip from '../../scripts/auth_flip.js'
 
 flip.init();
+parallax.init();

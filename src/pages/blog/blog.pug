@@ -4,16 +4,18 @@ block title
 block main
   .main
     section#headSection.section.section-blog
+      #parallax.parallax
+        img.parallax__image(src=require("../../static/images/bg/bgHugeScreen.jpg"))
       include ../../components/user/user.pug
       +user('user_blog', 'heading_big section-blog__heading', 'blog')
-      .bg-word.bg-word_medium.main__bg-word
+      #bgWord.bg-word.bg-word_medium.main__bg-word
         include ../../static/images/bg/words/blog_header.svg
       button#arrowDown.arrow.main__arrow
             include ../../static/images/otherIcons/arrow_down.svg
     section#mainSection.section.section_main
       include ../../components/triangles/triangles.pug
       +triangles('triangles__blog')
-      aside#menu.content.main__content
+      aside#menu.content.main__content.main__content_hidden
         ul.content__list
           li.content__item
             a.content__link.content__link_active(href="#first") Самое важное в SASS

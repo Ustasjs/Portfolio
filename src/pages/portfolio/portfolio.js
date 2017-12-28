@@ -16,6 +16,7 @@ import burger from '../../components/burger_menu/burger_menu.js';
 // scripts
 import blur from '../../scripts/blur.js';
 import arrowScroll from '../../scripts/arrow_scroll';
+import parallaxScroll from '../../scripts/parallax_scroll';
 // media
 import '../../static/styles/layout/settingsMedia.scss';
 import '../../static/styles/baseMedia.scss';
@@ -23,3 +24,4 @@ import '../../static/styles/baseMedia.scss';
 burger.init();
 blur.init();
 arrowScroll.init();
+parallaxScroll.init();

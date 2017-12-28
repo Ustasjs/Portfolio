@@ -1,5 +1,5 @@
 mixin user(className, headingMod, blog)
-  .user(class=className ? className : '')
+  #user.user(class=className ? className : '')
     .user__wrap
       img.user__img(src=require("../../static/images/heroSmall.jpg"), alt="Мое фото")
     if !blog
