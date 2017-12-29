@@ -40,3 +40,66 @@
     opacity: 0.8;
   }
 }
+
+// modal
+
+.modal {
+  display: none;
+  position: absolute;
+  top:0;
+  left:0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  min-width: 320px;
+
+  &:after {
+    transform: translateX(100%);
+  }
+}
+
+.modal__left, .modal__right {
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 191, 165, 0.7);
+  z-index: -1;
+  transition: 1s;
+}
+
+.modal__left {
+  transform: translateX(-100%);
+}
+
+.modal__right {
+  transform: translateX(100%);
+}
+
+.modal_active {
+  display: block;
+}
+
+.modal__left_active {
+  transform: translateX(-50%);
+}
+
+.modal__right_active {
+  transform: translateX(50%);
+}
+
+.modal__nav {
+  animation: ping 0.3s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+  transform: scaleX(0.8);
+  animation-delay: 1s;
+}
+
+@keyframes ping {
+  100% { 
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}

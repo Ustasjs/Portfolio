@@ -6,6 +6,15 @@ html(lang="ru-RU")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
     block title
   body
-    include ../components/header/header.pug
-    block main
-    include ../components/footer/footer.pug
+    .wrapper
+      .modal#modal
+        .modal__left
+        include ../components/nav_list/nav_list.pug
+        -var links = [{path: 'portfolio.html', content:'Мои работы'}, {path:'about.html', content:'Обо мне'}, {path:'blog.html', content:'Блог'}, {path:'index.html', content:'Авторизация'}]
+        +navList(links, 'modal__nav nav_vertical modal__nav_hidden')
+        .modal__right
+      include ../components/burger_menu/burger_menu.pug
+      +burger('burger_header')
+      include ../components/header/header.pug
+      block main
+      include ../components/footer/footer.pug

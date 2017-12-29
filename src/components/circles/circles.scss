@@ -62,8 +62,14 @@
 
 .circle-above {
   stroke: #10c1a8;
+  stroke-dashoffset: 315;
   transform: rotate(-90deg);
   transform-origin: 60px 60px;
+  transition: all 1.5s;
+}
+
+.circles_full .circle-above {
+  stroke-dashoffset: 0;
 }
 
 .circles__info {

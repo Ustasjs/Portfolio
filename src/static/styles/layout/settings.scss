@@ -94,12 +94,17 @@ button, input, textarea {
   display: inline-block;
 
   &:before {
-    @include linesForHeadings();
+    @include linesForHeadings($black);
     left: -40px;
   }
 
   &:after {
-    @include linesForHeadings();
+    @include linesForHeadings($black);
     right: -40px;
   }
+}
+
+.prevent-scroll {
+  position: fixed;
+  overflow-y:scroll;
 }

@@ -1,3 +1,68 @@
+// modal
+
+.modal {
+  display: none;
+  position: absolute;
+  top:0;
+  left:0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  min-width: 320px;
+
+  &:after {
+    transform: translateX(100%);
+  }
+}
+
+.modal__left, .modal__right {
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 191, 165, 0.7);
+  z-index: -1;
+  transition: 1s;
+}
+
+.modal__left {
+  transform: translateX(-100%);
+}
+
+.modal__right {
+  transform: translateX(100%);
+}
+
+.modal_active {
+  display: block;
+}
+
+.modal__left_active {
+  transform: translateX(-50%);
+}
+
+.modal__right_active {
+  transform: translateX(50%);
+}
+
+.modal__nav {
+  animation: ping 0.3s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+  transform: scaleX(0.8);
+  animation-delay: 1s;
+}
+
+@keyframes ping {
+  100% { 
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+// main styles
+
 .section-blog {
   @include bgCover('../../static/images/bg/blogLaptop.jpg');
   display: flex;
@@ -68,6 +133,8 @@
 }
 
 .main__content {
+  width: 300px;
+  min-width: 300px;
   @include tablet {
     position: fixed;
     top: 0;
@@ -75,12 +142,12 @@
     bottom: 0;
     background-color: $lightgreen;
     z-index: 2;
-    width: 300px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
     box-shadow: 3px 0px 3px 0px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s;
 
     &:before {
       content: '';
@@ -96,7 +163,21 @@
   }
 }
 
+.main__content_hidden {
+  left: -350px;
+}
+
 .main__content_active {
+  left: 0;
+}
+
+.content__list {
+  width: 300px;
+}
+
+.content__list_fixed {
+  position: fixed;
+  top: 70px;
   left: 0;
 }
 
