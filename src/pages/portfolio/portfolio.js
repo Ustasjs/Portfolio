@@ -13,6 +13,7 @@ import '../../components/slider/slider.scss';
 import '../../components/burger_menu/burger_menu.scss';
 // component scripts
 import burger from '../../components/burger_menu/burger_menu.js';
+import slider from '../../components/slider/slider.js';
 // scripts
 import blur from '../../scripts/blur.js';
 import arrowScroll from '../../scripts/arrow_scroll';
@@ -25,3 +26,4 @@ burger.init();
 blur.init();
 arrowScroll.init();
 parallaxScroll.init();
+slider.init();
