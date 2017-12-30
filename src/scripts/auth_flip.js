@@ -1,3 +1,5 @@
+import { removeAllErrors } from '../components/form_validation/form_validation';
+
 class Flip {
   constructor() {
     this.isAuthStage = false;
@@ -22,6 +24,7 @@ class Flip {
   }
 
   backButtonClickHandler() {
+    removeAllErrors('auth');
     this.backToLogo();
   }
 
@@ -29,6 +32,7 @@ class Flip {
     const target = e.target;
 
     if (this.isAuthStage && !target.closest('#authButton') && !target.closest('.flip')) {
+      removeAllErrors('auth');
       this.backToLogo();
     }
   }

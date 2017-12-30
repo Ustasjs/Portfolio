@@ -12,10 +12,12 @@ import '../../components/triangles/triangles.scss';
 import '../../components/slider/slider.scss';
 import '../../components/burger_menu/burger_menu.scss';
 import '../../components/preloader/preloader.scss';
+import '../../components/form_validation/form_validation.scss';
 // component scripts
 import Burger from '../../components/burger_menu/burger_menu.js';
 import Slider from '../../components/slider/slider.js';
 import Preloader from '../../components/preloader/preloader.js';
+import FormValidation from '../../components/form_validation/form_validation.js';
 // scripts
 import Blur from '../../scripts/blur.js';
 import ArrowScroll from '../../scripts/arrow_scroll';
@@ -32,5 +34,5 @@ document.addEventListener('DOMContentLoaded', () => {
   new ArrowScroll().init();
   new ParallaxScroll().init();
   new Slider().init();
-
+  new FormValidation().init();
 })

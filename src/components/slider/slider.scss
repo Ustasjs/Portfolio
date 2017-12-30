@@ -100,14 +100,11 @@
   width: 50%;
   height: 65%;
   position: relative;
+  overflow: hidden;
   @include tablet {
     width: 100%;
     height: 530px;;
     order: 1;
-  }
-
-  @include smartphone {
-    height: auto;
   }
 }
 
@@ -140,10 +137,6 @@
     width: 100%;
     height: 215px;;
     order: 3;
-  }
-
-  @include smartphone {
-    height: auto;
   }
 }
 

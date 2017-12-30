@@ -22,11 +22,15 @@ block main
           .auth__main
             h2.heading.auth__heading.heading_medium
               .heading__content Авторизуйтесь
-            form.auth__form(action="POST")
+            form#authForm.auth__form(action="POST")
               .auth__input-wrap.auth__input-wrap_login
-                input.auth__input(placeholder="Логин")
+                .auth__icon
+                  include ../../static/images/otherIcons/login.svg
+                input#login.auth__input(placeholder="Логин")
               .auth__input-wrap.auth__input-wrap_password
-                input.auth__input(placeholder="Пароль") 
+                .auth__icon
+                  include ../../static/images/otherIcons/password.svg
+                input#password.auth__input(placeholder="Пароль") 
               label.auth__label
                 input.auth__checkbox(type="checkbox")
                 .auth__custom-checkbox
@@ -43,7 +47,7 @@ block main
                   span.auth__label-text Не уверен
           .auth__buttons
             button#backButton.auth__button На главную
-            button.auth__button Войти
+            button.auth__button(type='submit', form='authForm') Войти
 block footer
   .footer.welcome__footer
     .footer__content 

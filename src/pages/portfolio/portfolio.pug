@@ -49,9 +49,9 @@ block solid
       form#contacts.contact-form__form(action="POST")
         h3.contact-form__heading.heading.heading_medium
           .heading__content Связаться со мной
-        input.contact-form__input(name="name", required, placeholder='Имя')
-        input.contact-form__input(name="email", type='email', required, placeholder='Email')
-        textarea.contact-form__textarea(name="message", placeholder='Ваше сообщение')
+        input#name.contact-form__input(name="name", placeholder='Имя')
+        input#email.contact-form__input(name="email", type='email', placeholder='Email')
+        textarea#message.contact-form__textarea(name="message", placeholder='Ваше сообщение')
       .contact-form__controls
         button.contact-form__button(type="submit", form="contacts") Отправить
         button.contact-form__button(type="reset", form="contacts") Очистить

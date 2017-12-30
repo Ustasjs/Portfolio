@@ -1,0 +1,32 @@
+.error {
+  padding: 15px;
+  background-color: #e44845;
+  color: $white;
+  border-radius: 5px;
+  position: absolute;
+  white-space: nowrap;
+
+  @include smartphone() {
+    font-size: 13px;
+  }
+}
+
+.error_auth {
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.error_contact {
+  bottom: 95px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  @include tablet() {
+    bottom: 75px;
+  }
+
+  @include smartphone() {
+    bottom: 80px;
+  }
+}

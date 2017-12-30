@@ -32,7 +32,6 @@ class Preloader {
   }
 
   loadImages(images) {
-    console.log(images);
     const step = Math.ceil(100 / images.length);
 
     return new Promise((resolve) => {

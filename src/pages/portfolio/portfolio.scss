@@ -58,6 +58,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .feedback__head {
@@ -213,6 +214,11 @@
   height: 140px;
   resize: none;
 }
+
+.contact-form__input_error {
+  border: solid 1px #e44845;
+}
+
 
 .contact-form__controls {
   overflow: hidden;
