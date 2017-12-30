@@ -36,4 +36,4 @@ class ParallaxScroll {
   }
 }
 
-export default new ParallaxScroll();
+export default ParallaxScroll;

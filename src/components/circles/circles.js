@@ -30,4 +30,4 @@ class Circles {
   }
 }
 
-export default new Circles();
+export default Circles;

@@ -11,21 +11,25 @@ import '../../components/user/user.scss';
 import '../../components/circles/circles.scss';
 import '../../components/triangles/triangles.scss';
 import '../../components/burger_menu/burger_menu.scss';
+import '../../components/preloader/preloader.scss';
 // component scripts
-import burger from '../../components/burger_menu/burger_menu.js';
-import circles from '../../components/circles/circles.js'
+import Burger from '../../components/burger_menu/burger_menu.js';
+import Circles from '../../components/circles/circles.js';
 // scripts
-import arrowScroll from '../../scripts/arrow_scroll';
-import parralaxScroll from '../../scripts/parallax_scroll';
+import ArrowScroll from '../../scripts/arrow_scroll';
+import ParralaxScroll from '../../scripts/parallax_scroll';
 // media
 import '../../static/styles/layout/settingsMedia.scss';
 import '../../static/styles/baseMedia.scss';
 
 import Map from '../../scripts/map';
 
-Map.makeMap();
-burger.init();
-arrowScroll.init();
-parralaxScroll.init();
-circles.init();
+document.addEventListener('DOMContentLoaded', () => {
 
+  Map.makeMap();
+  new Burger().init();
+  new ArrowScroll().init();
+  new ParralaxScroll().init();
+  new Circles().init();
+
+})

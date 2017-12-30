@@ -41,4 +41,4 @@ class Flip {
 
 }
 
-export default new Flip();
+export default Flip;

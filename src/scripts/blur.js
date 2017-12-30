@@ -27,4 +27,4 @@ class Blur {
   }
 }
 
-export default new Blur();
+export default Blur;

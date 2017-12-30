@@ -98,4 +98,4 @@ class Slider {
 
 }
 
-export default new Slider();
+export default Slider;

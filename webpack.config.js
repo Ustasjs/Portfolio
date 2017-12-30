@@ -26,22 +26,30 @@ const commonConfig = {
     new HtmlWebpackPlugin({
       filename: 'index.html',
       chunks: ['index', 'common'],
-      template: PATHS.source + '/pages/index/index.pug'
+      template: PATHS.source + '/pages/index/index.pug',
+      inject: 'head',
+      //favicon: PATHS.source + '/static/images/fav_mount.png'
     }),
     new HtmlWebpackPlugin({
       filename: 'blog.html',
       chunks: ['blog', 'common'],
-      template: PATHS.source + '/pages/blog/blog.pug'
+      template: PATHS.source + '/pages/blog/blog.pug',
+      inject: 'head',
+      //favicon: PATHS.source + '/static/images/fav_mount.png'
     }),
     new HtmlWebpackPlugin({
       filename: 'about.html',
       chunks: ['about', 'common'],
-      template: PATHS.source + '/pages/about/about.pug'
+      template: PATHS.source + '/pages/about/about.pug',
+      inject: 'head',
+      //favicon: PATHS.source + '/static/images/fav_mount.png'
     }),
     new HtmlWebpackPlugin({
       filename: 'portfolio.html',
       chunks: ['portfolio', 'common'],
-      template: PATHS.source + '/pages/portfolio/portfolio.pug'
+      template: PATHS.source + '/pages/portfolio/portfolio.pug',
+      inject: 'head',
+      //favicon: PATHS.source + '/static/images/fav_mount.png'
     }),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'common'
@@ -177,7 +185,7 @@ const productionConfig = {
   plugins: [new ExtractTextPlugin('./css/[name].css'), new webpack.optimize.UglifyJsPlugin()]
 };
 
-module.exports = function(env) {
+module.exports = function (env) {
   if (env === 'production') {
     return merge(commonConfig, productionConfig);
   }

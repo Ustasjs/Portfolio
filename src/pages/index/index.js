@@ -6,11 +6,17 @@ import '../../components/user/user.scss';
 import '../../components/socials/socials.scss';
 import '../../components/nav_list/nav_list.scss';
 import '../../components/parallaxMove/parallax.scss';
-import parallax from '../../components/parallaxMove/parallax.js';
+import '../../components/preloader/preloader.scss';
+// components scripts
+import Parallax from '../../components/parallaxMove/parallax.js';
+import Preloader from '../../components/preloader/preloader.js'
 // media
 import '../../static/styles/layout/settingsMedia.scss';
 // scripts
-import flip from '../../scripts/auth_flip.js'
+import Flip from '../../scripts/auth_flip.js'
 
-flip.init();
-parallax.init();
+document.addEventListener('DOMContentLoaded', () => {
+  new Preloader().init();
+  new Flip().init();
+  new Parallax().init();
+});

@@ -29,4 +29,4 @@ class Parallax {
   }
 }
 
-export default new Parallax();
+export default Parallax;
