@@ -16,8 +16,11 @@ import FormValidation from '../../components/form_validation/form_validation.js'
 import '../../static/styles/layout/settingsMedia.scss';
 // scripts
 import Flip from '../../scripts/auth_flip.js';
+import RemoveParallaxOnTouch from '../../scripts/removeParallaxOnTouch';
 
 document.addEventListener('DOMContentLoaded', () => {
+  new RemoveParallaxOnTouch().init();
+
   new Preloader().init();
   new Flip().init();
   new Parallax().init();
