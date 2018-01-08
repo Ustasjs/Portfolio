@@ -183,16 +183,7 @@
   padding: 12px 15px;;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
-}
-
-.auth__input-wrap_error {
-  .auth__input {
-    border: solid 1px #e44845;
-  }
-
-  .auth__icon {
-    fill: #e44845;
-  }
+  order: 1;
 }
 
 .auth__input-wrap {
@@ -207,10 +198,19 @@
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   flex-grow: 1;
+  order: 2;
 }
 
 .auth__question, .auth__question-wrap {
   margin-top: 10px;
+}
+
+.input_type_error {
+  border: solid 1px #e44845;
+}
+
+.input_type_error ~ .auth__icon {
+  fill: #e44845;
 }
 
 // checkbox

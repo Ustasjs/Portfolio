@@ -24,13 +24,13 @@ block main
               .heading__content Авторизуйтесь
             form#authForm.auth__form(action="POST")
               .auth__input-wrap.auth__input-wrap_login
+                input#login.auth__input(placeholder="Логин")
                 .auth__icon
                   include ../../static/images/otherIcons/login.svg
-                input#login.auth__input(placeholder="Логин")
               .auth__input-wrap.auth__input-wrap_password
+                input#password.auth__input(placeholder="Пароль")
                 .auth__icon
-                  include ../../static/images/otherIcons/password.svg
-                input#password.auth__input(placeholder="Пароль") 
+                  include ../../static/images/otherIcons/password.svg 
               label.auth__label
                 input.auth__checkbox(type="checkbox")
                 .auth__custom-checkbox
