@@ -58,28 +58,6 @@ class FormValidation {
     return input.value === '';
   }
 
-  // handleOneInputSubmit(typeOfForm, input) {
-  //   const containerAuth = document.querySelector('.header');
-  //   const containerContact = document.querySelector('.feedback');
-  //   const isInvalid = this.validateInput(input);
-  //   let oneInputMessage = 'Это поле должно быть заполнено';
-
-  //   switch (typeOfForm) {
-  //     case 'auth':
-  //       if (isInvalid) {
-  //         this.renderErrorMessage(containerAuth, 'error_auth', oneInputMessage);
-  //         input.closest('.auth__input-wrap').classList.add('auth__input-wrap_error');
-  //       }
-  //       break;
-  //     case 'contact':
-  //       if (isInvalid) {
-  //         this.renderErrorMessage(containerContact, 'error_contact', oneInputMessage);
-  //         input.classList.add('contact-form__input_error');
-  //       }
-  //       break;
-  //   }
-  // }
-
   handleOneInputSubmit(container, containerErrorClassName, input) {
     const isInvalid = this.validateInput(input);
     let oneInputMessage = 'Это поле должно быть заполнено';
