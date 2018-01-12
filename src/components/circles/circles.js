@@ -1,12 +1,13 @@
 class Circles {
   constructor() {
-    this.headSectionHeight = document.getElementById('headSection').offsetHeight;
+    this.skillsSection = document.getElementById('skillsSection');
     this.circles = document.getElementById('circles');
   }
 
   init() {
+
     window.addEventListener('load', () => {
-      if (this.headSectionHeight !== undefined && this.circles) {
+      if (this.skillsSection !== undefined && this.circles) {
         this.checkScroll();
         window.addEventListener('scroll', this.checkScroll.bind(this))
       }
@@ -15,12 +16,18 @@ class Circles {
 
   checkScroll() {
     const currentScroll = window.pageYOffset;
-    const twoThirdsOfSectionHeight = this.headSectionHeight / 3 * 2;
+    const skillsSectionCoords = this.getCoords(this.skillsSection);
 
-    if (currentScroll >= twoThirdsOfSectionHeight) {
+    if (currentScroll >= (skillsSectionCoords / 4 * 3)) {
       this.circles.classList.add('circles_full');
     }
   }
+
+  getCoords(elem) {
+    const coordsOfElem = elem.getBoundingClientRect();
+
+    return coordsOfElem.top + window.pageYOffset;
+  }
 }
 
-export default new Circles();
+export default Circles;

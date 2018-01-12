@@ -6,6 +6,7 @@ html(lang="ru-RU")
     meta(http-equiv="X-UA-Compatible", content="ie=edge")
     block title
   body
+    block preloader
     .wrapper
       .modal#modal
         .modal__left
@@ -17,14 +18,16 @@ html(lang="ru-RU")
       +burger('burger_header')
       include ../components/header/header.pug
       .main
-        section#headSection.section.section_main
+        section.section.section_main
+          #parallax.parallax
+            img.parallax__image(src=require("../../static/images/bg/bgHugeScreen.jpg"))
           include ../components/user/user.pug
           +user('user_main', 'heading_main-logo')
-          .bg-word.bg-word_big.main__bg-word
+          #bgWord.bg-word.bg-word_big.main__bg-word
             block bg-word
           button#arrowDown.arrow.main__arrow
             include ../static/images/otherIcons/arrow_down.svg
-        section.section.section_split
+        section#skillsSection.section.section_split
           block split
         section.section.section_solid
           block solid

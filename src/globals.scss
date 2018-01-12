@@ -59,6 +59,12 @@ $footerColor: #555b5e;
   }
 }
 
+@mixin desctopForParallax {
+  @media (max-width: 1000px) {
+    @content;
+  }
+}
+
 @mixin tablet {
   @media (max-width: 768px) {
     @content;

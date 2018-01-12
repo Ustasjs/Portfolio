@@ -1,4 +1,4 @@
-class asideMenu {
+class AsideMenu {
   constructor() {
     this.appWindowWidth = document.documentElement.clientWidth;
     this.menu = document.getElementById('menu');
@@ -102,4 +102,4 @@ class asideMenu {
   }
 }
 
-export default new asideMenu();
+export default AsideMenu;

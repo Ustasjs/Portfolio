@@ -24,4 +24,4 @@ class Burger {
   }
 }
 
-export default new Burger();
+export default Burger;

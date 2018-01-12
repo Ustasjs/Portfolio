@@ -14,8 +14,17 @@ class ArrowScroll {
   }
 
   arrowClickHandler() {
+    let targetSection;
     const splitSection = document.querySelector('.section_split');
-    const coords = this.getCoords(splitSection);
+    const mainSection = document.getElementById('mainSection');
+
+    if (splitSection) {
+      targetSection = splitSection;
+    } else {
+      targetSection = mainSection;
+    }
+
+    const coords = this.getCoords(targetSection);
 
     this.smoothScroll(coords);
   }
@@ -46,4 +55,4 @@ class ArrowScroll {
   }
 }
 
-export default new ArrowScroll();
+export default ArrowScroll;
