@@ -21,6 +21,10 @@
   }
 }
 
+.split__skills {
+  position: relative;
+}
+
 .split__info {
   @include specialHugeScreen {
     display: flex;
@@ -168,6 +172,12 @@
 
 .skills__circles {
   margin-top: 35px;
+  position: relative;
+}
+
+.skills__connectionError {
+  width: 90%;
+  margin: 0 auto;
 }
 
 // solid

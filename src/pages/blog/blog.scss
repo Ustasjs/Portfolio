@@ -149,7 +149,20 @@
     padding-top: 30px;
     padding-bottom: 30px;
   }
+
+  .connectionError {
+    width: 60%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  
+    @include smartphone() {
+      width: 80%;
+    }
+  }
 }
+
 
 .main__content {
   width: 300px;

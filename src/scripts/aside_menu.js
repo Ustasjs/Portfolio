@@ -11,6 +11,10 @@ class AsideMenu {
   }
 
   init() {
+
+    if (!this.innerList || !this.articlesLinks || !this.articles) {
+      return;
+    }
     // update window width
     window.addEventListener('resize', () => {
       this.appWindowWidth = window.innerWidth;

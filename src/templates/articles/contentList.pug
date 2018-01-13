@@ -1,0 +1,5 @@
+-var articles = [{name: 'name', content: 'content', date: '01.01.2018'}, {name: 'name2', content: 'content2', date: '01.01.2018'}]
+ul.content__list
+  -for (i=0; i < articles.length; i++)
+    li.content__item
+      a.content__link(href=`#article${i}`)= articles[i].name
