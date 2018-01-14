@@ -22,17 +22,20 @@ import FormValidation from '../../components/form_validation/form_validation.js'
 import Blur from '../../scripts/blur.js';
 import ArrowScroll from '../../scripts/arrow_scroll';
 import ParallaxScroll from '../../scripts/parallax_scroll';
+import Works from '../../scripts/fetchData/portfolio';
 // media
 import '../../static/styles/layout/settingsMedia.scss';
 import '../../static/styles/baseMedia.scss';
 
 document.addEventListener('DOMContentLoaded', () => {
-
   new Preloader().init();
-  new Burger().init();
-  new Blur().init();
-  new ArrowScroll().init();
-  new ParallaxScroll().init();
-  new Slider().init();
-  new FormValidation().init();
+  new Works().init()
+    .then((data) => {
+      new Burger().init();
+      new Blur().init();
+      new ArrowScroll().init();
+      new ParallaxScroll().init();
+      new Slider(data).init();
+      new FormValidation().init();
+    })
 })

@@ -158,6 +158,7 @@
   overflow: hidden;
   width: 100%;
   height: 100%;
+  left: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -206,10 +207,6 @@
 
 }
 
-
-
-
-
 .slider__img {
   max-height: 100%;
   max-width: 100%;
@@ -251,4 +248,13 @@
 
 .slider__arrow-img_up {
   transform: rotate(180deg);
+}
+
+.slider__connectionError {
+  width: 60%;
+  margin: 30px auto;
+
+  @include smartphone() {
+    width: 80%;
+  }
 }

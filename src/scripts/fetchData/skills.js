@@ -15,8 +15,6 @@ class Articles {
         const errorMessage = `При получении данных с сервера возникла ошибка. ${e.message} Уверяю вас, я уже работаю над этим.`;
         const error = makeErrorMessage(errorMessage, 'skills__connectionError');
 
-        console.log(skills);
-
         skills.appendChild(error);
       })
   }
