@@ -23,11 +23,14 @@ import Blur from '../../scripts/blur.js';
 import ArrowScroll from '../../scripts/arrow_scroll';
 import ParallaxScroll from '../../scripts/parallax_scroll';
 import Works from '../../scripts/fetchData/portfolio';
+import MailRequest from '../../scripts/mail_request';
 // media
 import '../../static/styles/layout/settingsMedia.scss';
 import '../../static/styles/baseMedia.scss';
 
 document.addEventListener('DOMContentLoaded', () => {
+  const mail = new MailRequest();
+
   new Preloader().init();
   new Works().init()
     .then((data) => {
@@ -36,6 +39,6 @@ document.addEventListener('DOMContentLoaded', () => {
       new ArrowScroll().init();
       new ParallaxScroll().init();
       new Slider(data).init();
-      new FormValidation().init();
+      new FormValidation(mail.init).init();
     })
 })

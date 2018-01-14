@@ -16,19 +16,19 @@ class Slider {
       const upActiveElement = document.querySelector('.slider__list_up .slider__wrap_active');
       const downActiveElement = document.querySelector('.slider__list_down .slider__wrap_active');
 
-      switch (true) {
-        case (target.closest('.slider__button_up') !== null):
-          this.moveHandler(upButtonSlides, 'second', upActiveElement, 'slider__wrap', 'up');
-          this.moveHandler(downButtonSlides, 'second', downActiveElement, 'slider__wrap', 'up');
-          this.moveHandler(mainSlides, 'main', mainActiveElement, 'slider__main-wrap', 'up');
-          break;
-        case (target.closest('.slider__button_down') !== null):
-          this.moveHandler(upButtonSlides, 'second', upActiveElement, 'slider__wrap', 'down');
-          this.moveHandler(downButtonSlides, 'second', downActiveElement, 'slider__wrap', 'down');
-          this.moveHandler(mainSlides, 'main', mainActiveElement, 'slider__main-wrap', 'down');
-          break;
-        default: return;
+      if (target.closest('.slider__button_up') !== null) {
+        this.moveHandler(upButtonSlides, 'second', upActiveElement, 'slider__wrap', 'up');
+        this.moveHandler(downButtonSlides, 'second', downActiveElement, 'slider__wrap', 'up');
+        this.moveHandler(mainSlides, 'main', mainActiveElement, 'slider__main-wrap', 'up');
       }
+
+      if (target.closest('.slider__button_down') !== null) {
+        this.moveHandler(upButtonSlides, 'second', upActiveElement, 'slider__wrap', 'down');
+        this.moveHandler(downButtonSlides, 'second', downActiveElement, 'slider__wrap', 'down');
+        this.moveHandler(mainSlides, 'main', mainActiveElement, 'slider__main-wrap', 'down');
+      }
+
+      return;
     })
   }
 

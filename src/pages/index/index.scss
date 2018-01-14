@@ -46,7 +46,8 @@
   display: flex;
   justify-content: flex-end;
   min-height: 70px;
-  padding: 20px;
+  padding-top: 20px;
+  padding-right: 20px;
 
   @include hugeScreen {
     padding-left: 100px;

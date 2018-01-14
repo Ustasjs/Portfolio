@@ -1,6 +1,11 @@
 class FormValidation {
 
+  constructor(func) {
+    this.formMethod = func;
+  }
+
   init() {
+    let isValid = false;
     const authForm = document.getElementById('authForm');
     const contactForm = document.getElementById('contacts');
 
@@ -8,16 +13,25 @@ class FormValidation {
       const containerAuth = document.querySelector('.header');
       const login = document.getElementById('login');
       const password = document.getElementById('password');
+      const humanCheck = authForm.elements.humanCheck;
+      const radioValue = document.getElementById('radioYes');
 
       authForm.addEventListener('submit', (e) => {
         e.preventDefault();
         removeAllErrors('auth');
 
         if (login.value === '' && password.value === '') {
-          this.handleAllInputsSubmit(containerAuth, 'error_auth', [login, password]);
+          isValid = !!this.handleAllInputsSubmit(containerAuth, 'error_auth', [login, password]);
         } else {
-          this.handleOneInputSubmit(containerAuth, 'error_auth', login);
-          this.handleOneInputSubmit(containerAuth, 'error_auth', password);
+          isValid = (this.handleOneInputSubmit(containerAuth, 'error_auth', login) &&
+            this.handleOneInputSubmit(containerAuth, 'error_auth', password));
+        }
+
+        if (isValid && humanCheck.checked && radioValue.checked) {
+          this.formMethod(login.value, password.value)
+            .catch((err) => {
+              this.renderMessage(containerAuth, 'error_auth', err.message)
+            })
         }
       })
     }
@@ -33,22 +47,32 @@ class FormValidation {
         removeAllErrors('contact');
 
         if (name.value === '' && email.value === '' && message.value === '') {
-          this.handleAllInputsSubmit(containerContact, 'error_contact', [name, email, message]);
+          isValid = !!this.handleAllInputsSubmit(containerContact, 'error_contact', [name, email, message]);
         } else {
-          this.handleOneInputSubmit(containerContact, 'error_contact', name);
-          this.handleOneInputSubmit(containerContact, 'error_contact', email);
-          this.handleOneInputSubmit(containerContact, 'error_contact', message);
+          isValid = (this.handleOneInputSubmit(containerContact, 'error_contact', name) &&
+            this.handleOneInputSubmit(containerContact, 'error_contact', email) &&
+            this.handleOneInputSubmit(containerContact, 'error_contact', message));
+        }
+
+        if (isValid) {
+          this.formMethod(name.value, email.value, message.value)
+            .then((data) => {
+              this.renderMessage(containerContact, 'succes_contact', data.message)
+            })
+            .catch((err) => {
+              this.renderMessage(containerContact, 'error_contact', err.message)
+            })
         }
       })
     }
 
   }
 
-  renderErrorMessage(parent, className, text) {
+  renderMessage(parent, className, text) {
     const messageElement = document.createElement('div');
 
     messageElement.textContent = text;
-    messageElement.classList.add('error');
+    messageElement.classList.add('message');
     messageElement.classList.add(className);
 
     parent.appendChild(messageElement);
@@ -59,25 +83,39 @@ class FormValidation {
   }
 
   handleOneInputSubmit(container, containerErrorClassName, input) {
+    let result;
     const isInvalid = this.validateInput(input);
     let oneInputMessage = 'Это поле должно быть заполнено';
 
     if (isInvalid) {
-      this.renderErrorMessage(container, containerErrorClassName, oneInputMessage);
+      this.renderMessage(container, containerErrorClassName, oneInputMessage);
       input.classList.add('input_type_error');
+
+      result = false;
+    } else {
+      result = true;
     }
+
+    return result;
   }
 
   handleAllInputsSubmit(container, containerErrorClassName, arrOfInputs) {
+    let result;
     const isAllInvalid = arrOfInputs.every((elem) => this.validateInput(elem) === true);
     const allInputMessage = 'Все поля должны быть заполнены';
 
     if (isAllInvalid) {
-      this.renderErrorMessage(container, containerErrorClassName, allInputMessage);
+      this.renderMessage(container, containerErrorClassName, allInputMessage);
       arrOfInputs.forEach((elem) => {
         elem.classList.add('input_type_error');
-      })
+      });
+
+      result = false;
+    } else {
+      result = true;
     }
+
+    return result;
   }
 
 }
@@ -85,7 +123,7 @@ class FormValidation {
 export default FormValidation;
 
 export function removeAllErrors() {
-  const errors = document.querySelectorAll('.error');
+  const errors = document.querySelectorAll('.message');
   let errorInputs;
   let className = 'input_type_error';
 

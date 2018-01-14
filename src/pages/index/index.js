@@ -17,12 +17,15 @@ import '../../static/styles/layout/settingsMedia.scss';
 // scripts
 import Flip from '../../scripts/auth_flip.js';
 import RemoveParallaxOnTouch from '../../scripts/removeParallaxOnTouch';
+import AuthRequest from '../../scripts/auth_request';
 
 document.addEventListener('DOMContentLoaded', () => {
+  const auth = new AuthRequest();
+
   new RemoveParallaxOnTouch().init();
 
   new Preloader().init();
   new Flip().init();
   new Parallax().init();
-  new FormValidation().init();
+  new FormValidation(auth.init).init();
 });
