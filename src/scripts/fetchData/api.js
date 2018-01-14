@@ -1,7 +1,7 @@
 const url = 'http://localhost:3000';
 
 const articlesApi = '/api/template/blog';
-const worksApi = '/api/template/portfolio1';
+const worksApi = '/api/template/portfolio';
 const skillsApi = '/api/template/skills';
 const options = {
   mode: 'cors'
