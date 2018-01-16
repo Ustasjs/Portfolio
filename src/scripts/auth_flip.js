@@ -7,6 +7,7 @@ class Flip {
     this.backButton = document.getElementById('backButton');
     this.container = document.getElementById('container');
     this.flipper = document.getElementById('flipper');
+    this.hero = document.getElementById('hero');
   }
 
   init() {
@@ -21,6 +22,9 @@ class Flip {
     this.flipper.classList.add('flip-container_auth');
     this.authButton.classList.add('auth-button_hidden');
     this.isAuthStage = true;
+    setTimeout(() => {
+      this.hero.classList.add('main__hero_hidden');
+    }, 100);
   }
 
   backButtonClickHandler() {
@@ -41,6 +45,9 @@ class Flip {
     this.flipper.classList.remove('flip-container_auth');
     this.authButton.classList.remove('auth-button_hidden');
     this.isAuthStage = false;
+    setTimeout(() => {
+      this.hero.classList.remove('main__hero_hidden');
+    }, 100);
   }
 
 }
