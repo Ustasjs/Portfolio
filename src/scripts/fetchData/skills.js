@@ -6,7 +6,7 @@ class Articles {
   init() {
     return fetchSkills()
       .then((data) => {
-        const skills = document.getElementById('skills');
+        const skills = document.querySelector('.skills__circles');
 
         skills.innerHTML = data;
       })

@@ -25,11 +25,15 @@ import '../../static/styles/baseMedia.scss';
 
 import Map from '../../scripts/map';
 
-new Skills().init()
-  .then(() => {
-    Map.makeMap();
-    new Circles().init();
-    new Burger().init();
-    new ArrowScroll().init();
-    new ParralaxScroll().init();
-  })
+document.addEventListener('DOMContentLoaded', () => {
+
+  new Skills().init()
+    .then(() => {
+      Map.makeMap();
+      new Circles().init();
+      new Burger().init();
+      new ArrowScroll().init();
+      new ParralaxScroll().init();
+    })
+
+})

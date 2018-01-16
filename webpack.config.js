@@ -27,29 +27,25 @@ const commonConfig = {
       filename: 'index.html',
       chunks: ['index', 'common'],
       template: PATHS.source + '/pages/index/index.pug',
-      inject: 'head',
-      //favicon: PATHS.source + '/static/images/fav_mount.png'
+      inject: 'head'
     }),
     new HtmlWebpackPlugin({
       filename: 'blog.html',
       chunks: ['blog', 'common'],
       template: PATHS.source + '/pages/blog/blog.pug',
-      inject: 'head',
-      //favicon: PATHS.source + '/static/images/fav_mount.png'
+      inject: 'head'
     }),
     new HtmlWebpackPlugin({
       filename: 'about.html',
       chunks: ['about', 'common'],
       template: PATHS.source + '/pages/about/about.pug',
-      inject: 'head',
-      //favicon: PATHS.source + '/static/images/fav_mount.png'
+      inject: 'head'
     }),
     new HtmlWebpackPlugin({
       filename: 'portfolio.html',
       chunks: ['portfolio', 'common'],
       template: PATHS.source + '/pages/portfolio/portfolio.pug',
       inject: 'head',
-      //favicon: PATHS.source + '/static/images/fav_mount.png'
     }),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'common'
@@ -145,6 +141,12 @@ const developmentConfig = {
     ]
   },
 
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify('development'),
+    })
+  ],
+
   devServer: {
     open: true,
     port: 9000
@@ -182,7 +184,12 @@ const productionConfig = {
     ]
   },
 
-  plugins: [new ExtractTextPlugin('./css/[name].css'), new webpack.optimize.UglifyJsPlugin()]
+  plugins: [
+    new ExtractTextPlugin('./css/[name].css'), new webpack.optimize.UglifyJsPlugin(),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify('production'),
+    })
+  ]
 };
 
 module.exports = function (env) {

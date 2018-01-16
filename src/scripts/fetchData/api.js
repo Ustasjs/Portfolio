@@ -1,13 +1,23 @@
-const url = 'http://92.53.104.80:3000';
+let url;
+let options;
+
+if (process.env.NODE_ENV === 'development') {
+  url = 'http://localhost:3000';
+  options = {
+    mode: 'cors'
+  };
+} else {
+  url = 'http://92.53.104.80:3000';
+  options = {
+    mode: 'same-origin'
+  };
+}
 
 const authApi = '/user';
 const mailApi = '/contact';
 const articlesApi = '/api/template/blog';
 const worksApi = '/api/template/portfolio';
 const skillsApi = '/api/template/skills';
-const options = {
-  mode: 'cors'
-};
 
 // Auth
 

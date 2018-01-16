@@ -22,10 +22,13 @@ import '../../static/styles/layout/settingsMedia.scss';
 
 // fetch data
 
-new Articles().init()
-  .then(() => {
-    new Burger().init();
-    new ArrowScroll().init();
-    new AsideMenu().init();
-    new ParallaxScroll().init();
-  })
+document.addEventListener('DOMContentLoaded', () => {
+
+  new Articles().init()
+    .then(() => {
+      new Burger().init();
+      new ArrowScroll().init();
+      new AsideMenu().init();
+      new ParallaxScroll().init();
+    })
+})
