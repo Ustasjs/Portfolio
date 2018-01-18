@@ -15,10 +15,12 @@ const commonConfig = {
     index: PATHS.source + '/pages/index/index.js',
     blog: PATHS.source + '/pages/blog/blog.js',
     about: PATHS.source + '/pages/about/about.js',
-    portfolio: PATHS.source + '/pages/portfolio/portfolio.js'
+    portfolio: PATHS.source + '/pages/portfolio/portfolio.js',
+    notFoundPage: PATHS.source + '/pages/notFoundPage/notFoundPage.js'
   },
   output: {
     path: PATHS.build,
+    publicPath: '/',
     filename: 'js/[name].js'
   },
 
@@ -46,6 +48,11 @@ const commonConfig = {
       chunks: ['portfolio', 'common'],
       template: PATHS.source + '/pages/portfolio/portfolio.pug',
       inject: 'head',
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'notFoundPage.html',
+      template: PATHS.source + '/pages/notFoundPage/notFoundPage.pug',
+      chunks: ['notFoundPage', 'common'],
     }),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'common'
@@ -149,7 +156,20 @@ const developmentConfig = {
 
   devServer: {
     open: true,
-    port: 9000
+    port: 9000,
+    setup(app) {
+      app.get('/portfolio', (req, res) => {
+        res.redirect('/portfolio.html')
+      });
+
+      app.get('/about', (req, res) => {
+        res.redirect('/about.html')
+      });
+
+      app.get('/blog', (req, res) => {
+        res.redirect('/blog.html')
+      });
+    }
   }
 };
 

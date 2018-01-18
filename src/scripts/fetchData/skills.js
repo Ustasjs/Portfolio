@@ -6,6 +6,17 @@ class Articles {
   init() {
     return fetchSkills()
       .then((data) => {
+
+        if (data.type === 'Empty') {
+          const skills = document.getElementById('skills');
+          const errorMessage = 'На данный момент в базе данных нет необходимой информации';
+          const error = makeErrorMessage(errorMessage, 'skills__connectionError');
+
+          skills.appendChild(error);
+
+          return;
+        }
+
         const skills = document.querySelector('.skills__circles');
 
         skills.innerHTML = data;

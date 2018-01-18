@@ -1,7 +1,7 @@
 footer.footer
   .footer__row
     include ../../components/nav_list/nav_list.pug
-    -var links = [{path: 'portfolio.html', content:'Мои работы'}, {path:'about.html', content:'Обо мне'}, {path:'blog.html', content:'Блог'}, {path:'index.html', content:'Авторизация'}]
+    -var links = [{path: 'portfolio', content:'Мои работы'}, {path:'about', content:'Обо мне'}, {path:'blog', content:'Блог'}, {path:'/', content:'Авторизация'}]
     +navList(links, 'footer__nav nav_horizontal nav_color_white')
     .footer__socials
       include ../../components/socials/socials.pug

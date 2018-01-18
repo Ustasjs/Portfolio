@@ -5,6 +5,10 @@ class Slider {
   }
 
   init() {
+    if (this.slidesInfo === undefined) {
+      return;
+    }
+
     const slider = document.getElementById('slider');
     const mainSlides = document.querySelectorAll('.slider__main-wrap');
     const upButtonSlides = document.querySelectorAll('.slider__list_up .slider__wrap');
@@ -60,13 +64,16 @@ class Slider {
   handleInfoRefresh(currentActiveIndex) {
     const heading = document.getElementById('headingContent');
     const stack = document.getElementById('stackContent');
+    const description = document.getElementById('description');
     const link = document.getElementById('infoLink');
     const newHeadingContent = this.slidesInfo[currentActiveIndex].name;
     const newStackContent = this.slidesInfo[currentActiveIndex].stack;
+    const newDescription = this.slidesInfo[currentActiveIndex].description;
     const newUrl = this.slidesInfo[currentActiveIndex].link;
 
     heading.textContent = newHeadingContent;
     stack.textContent = newStackContent;
+    description.textContent = newDescription;
 
     link.setAttribute('href', newUrl);
   }

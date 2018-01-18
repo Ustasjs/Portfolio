@@ -14,7 +14,17 @@ class FormValidation {
       const login = document.getElementById('login');
       const password = document.getElementById('password');
       const humanCheck = authForm.elements.humanCheck;
-      const radioValue = document.getElementById('radioYes');
+      const radioValueYes = document.getElementById('radioYes');
+      const customCheckbox = document.getElementById('styledHumanCheck');
+      const customRadios = document.querySelectorAll('.auth__custom-radio');
+
+      humanCheck.addEventListener('click', () => {
+        customCheckbox.classList.remove('checkbox_error');
+      })
+
+      radioValueYes.addEventListener('click', () => {
+        customRadios.forEach((elem) => elem.classList.remove('radio_error'));
+      })
 
       authForm.addEventListener('submit', (e) => {
         e.preventDefault();
@@ -27,7 +37,15 @@ class FormValidation {
             this.handleOneInputSubmit(containerAuth, 'error_auth', password));
         }
 
-        if (isValid && humanCheck.checked && radioValue.checked) {
+        if (!humanCheck.checked) {
+          customCheckbox.classList.add('checkbox_error');
+        }
+
+        if (!radioValueYes.checked) {
+          customRadios.forEach((elem) => elem.classList.add('radio_error'));
+        }
+
+        if (isValid && humanCheck.checked && radioValueYes.checked) {
           this.formMethod(login.value, password.value)
             .catch((err) => {
               this.renderMessage(containerAuth, 'error_auth', err.message)

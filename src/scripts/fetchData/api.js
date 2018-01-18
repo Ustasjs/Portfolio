@@ -35,10 +35,7 @@ export function auth(login, password) {
 
   return fetch(url + authApi, addOption).then(res => {
     if (res.status >= 400) {
-      return res.json()
-        .then((data) => {
-          throw new Error(`${data.message}`);
-        })
+      throw new Error(`Server side error: ${res.statusText}`);
     }
 
     return res;
@@ -61,10 +58,7 @@ export function sendMail(name, email, message) {
 
   return fetch(url + mailApi, addOption).then(res => {
     if (res.status >= 400) {
-      return res.json()
-        .then((data) => {
-          throw new Error(`${data.message}`);
-        })
+      throw new Error(`Server side error: ${res.statusText}`);
     }
 
     return res;

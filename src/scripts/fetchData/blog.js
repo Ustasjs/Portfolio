@@ -5,6 +5,17 @@ class Articles {
   init() {
     return fetchArticles()
       .then((data) => {
+
+        if (data.type === 'Empty') {
+          const mainSection = document.getElementById('mainSection');
+          const errorMessage = 'На данный момент в базе данных нет необходимой информации';
+          const error = makeErrorMessage(errorMessage);
+
+          mainSection.appendChild(error);
+
+          return;
+        }
+
         const blog = document.getElementById('blog');
         const menu = document.getElementById('menu');
 

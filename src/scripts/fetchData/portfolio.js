@@ -5,12 +5,21 @@ class Works {
 
   init() {
     return fetchWorks()
-      .then((resultData) => {
+      .then((data) => {
         const slider = document.getElementById('slider');
 
-        slider.innerHTML = resultData.html;
+        if (data.type === 'Empty') {
+          const errorMessage = 'На данный момент в базе данных нет необходимой информации';
+          const error = makeErrorMessage(errorMessage, 'slider__connectionError');
 
-        return resultData.data;
+          slider.appendChild(error);
+
+          return;
+        }
+
+        slider.innerHTML = data.html;
+
+        return data.data;
       })
       .catch((e) => {
         const slider = document.getElementById('slider');

@@ -1,0 +1,40 @@
+.not-found {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.not-found__message {
+  text-align: center;
+  padding: 20px;
+  margin: 30px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: rgb(235, 235, 235);
+}
+
+.not-found__content {
+  margin-bottom: 20px;
+}
+
+.info__link {
+  background-color: $green;
+  color: $white;
+  padding: 15px 20px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+
+  @include tablet {
+    padding: 10px 15px;
+  }
+
+  @include smartphone {
+    font-size: 14px;
+  }
+
+  &:hover {
+    background-color: $darkGreen;
+  }
+}

@@ -23,7 +23,7 @@
 .nav_vertical .nav__list {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-evenly;
   overflow: hidden;
   height: 100vh;
 }

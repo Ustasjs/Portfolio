@@ -142,7 +142,7 @@
   flex-direction: row;
   padding-top: 70px;
   padding-bottom: 70px;
-  justify-content: space-between;
+  justify-content: flex-start;
 
   @include tablet {
     display: block;
@@ -165,12 +165,12 @@
 
 
 .main__content {
-  width: 300px;
-  min-width: 300px;
+  width: $asideMenuWidth;
+  min-width: $asideMenuWidth;
   @include tablet {
     position: fixed;
     top: 0;
-    left: -300px;
+    left: -$asideMenuWidth;
     bottom: 0;
     background-color: $lightgreen;
     z-index: 2;
@@ -193,10 +193,19 @@
       cursor: pointer;
     }
   }
+
+  @include smartphone {
+    width: $asideMenuWidthSmaprtphone;
+    min-width: $asideMenuWidthSmaprtphone;
+    left: -$asideMenuWidthSmaprtphone;
+  }
 }
 
 .main__content_hidden {
-  left: -350px;
+  left: calc(-#{$asideMenuWidth} - 50px);
+  @include smartphone {
+    left: calc(-#{$asideMenuWidthSmaprtphone} - 50px);
+  }
 }
 
 .main__content_active {
@@ -204,7 +213,12 @@
 }
 
 .content__list {
-  width: 300px;
+  width: $asideMenuWidth;
+  overflow: hidden;
+
+  @include smartphone {
+    width: $asideMenuWidthSmaprtphone;
+  }
 }
 
 .content__list_fixed {
@@ -219,16 +233,20 @@
 
 .content__link {
   display: block;
-  min-width: 300px;
+  min-width: $asideMenuWidth;
   text-align: right;
   padding-right: 20px;
   padding-top: 10px;
   padding-bottom: 10px;
   @include tablet {
-    min-width: 245px;
+    min-width: calc(#{$asideMenuWidth} - 55px);
     color: $white;
     font-weight: 300;
     padding-left: 10px;
+  }
+
+  @include smartphone {
+    min-width: $asideMenuWidthSmaprtphone;
   }
 }
 
