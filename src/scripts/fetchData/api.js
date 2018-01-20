@@ -1,16 +1,21 @@
 let url;
 let options;
 
-if (process.env.NODE_ENV === 'development') {
-  url = 'http://localhost:3000';
-  options = {
-    mode: 'cors'
-  };
-} else {
-  url = 'http://92.53.104.80:3000';
-  options = {
-    mode: 'same-origin'
-  };
+switch (process.env.NODE_ENV) {
+  case 'development': url = 'http://localhost:3000';
+    options = {
+      mode: 'cors'
+    };
+    break;
+  case 'demonstration': url = 'http://localhost:3000';
+    options = {
+      mode: 'same-origin'
+    };
+    break;
+  default: url = 'http://92.53.104.80:3000';
+    options = {
+      mode: 'same-origin'
+    };
 }
 
 const authApi = '/user';
@@ -34,15 +39,22 @@ export function auth(login, password) {
   });
 
   return fetch(url + authApi, addOption).then(res => {
-    if (res.status >= 400) {
+    if (res.status >= 400 && res.status !== 430) {
       throw new Error(`Server side error: ${res.statusText}`);
+    }
+
+    if (res.status === 430) {
+      return res.json()
+        .then((data) => {
+          throw new Error(`${data.message}`);
+        })
     }
 
     return res;
   });
 }
 
-// Auth
+// sendMail
 
 export function sendMail(name, email, message) {
   const data = { name, email, message };

@@ -205,16 +205,33 @@ const productionConfig = {
   },
 
   plugins: [
-    new ExtractTextPlugin('./css/[name].css'), new webpack.optimize.UglifyJsPlugin(),
+    new ExtractTextPlugin('./css/[name].css'),
+    new webpack.optimize.UglifyJsPlugin()
+  ]
+};
+
+const productionEnv = {
+  plugins: [
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production'),
     })
   ]
-};
+}
+
+const demonstrationEnv = {
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify('demonstration'),
+    })
+  ]
+}
 
 module.exports = function (env) {
   if (env === 'production') {
-    return merge(commonConfig, productionConfig);
+    return merge(commonConfig, productionConfig, productionEnv);
+  }
+  if (env === 'demonstration') {
+    return merge(commonConfig, productionConfig, demonstrationEnv);
   }
   if (env === 'development') {
     return merge(commonConfig, developmentConfig);
