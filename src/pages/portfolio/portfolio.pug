@@ -12,8 +12,7 @@ block split
     .projects__head
       h1.projects__heading.heading.heading_big
         .heading__content Мои работы
-  include ../../components/slider/slider.pug
-  +slider()
+  #slider.slider
 block solid
   .solid__background
     img.solid__img(src=require('../../static/images/bg/worksDesctop.jpg'))
@@ -46,7 +45,7 @@ block solid
               .comments__user-status преподаватель
     #contact-form.contact-form
       #blur.contact-form__blur
-      form#contacts.contact-form__form(action="POST")
+      form#contacts.contact-form__form(enctype="application/x-www-form-urlencoded")
         h3.contact-form__heading.heading.heading_medium
           .heading__content Связаться со мной
         input#name.contact-form__input(name="name", placeholder='Имя')

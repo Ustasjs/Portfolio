@@ -21,6 +21,10 @@
   }
 }
 
+.split__skills {
+  position: relative;
+}
+
 .split__info {
   @include specialHugeScreen {
     display: flex;
@@ -61,6 +65,8 @@
   }
 }
 
+
+
 .info__main {
   margin-right: 13.3%;
   margin-left: 13.3%;
@@ -98,6 +104,9 @@
 }
 
 .info__wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   margin-top: 35px;
   margin-bottom: 25px;
   margin-left: auto;
@@ -106,12 +115,17 @@
   height: 390px;
   overflow: hidden;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
   @include tablet {
     width: 100%;
     height: auto;
   }
+}
+
+.info__img {
+  max-width: 90%;
 }
 
 .info__content {
@@ -168,6 +182,15 @@
 
 .skills__circles {
   margin-top: 35px;
+  position: relative;
+}
+
+.skills__connectionError {
+  width: 90%;
+  margin-left: auto;
+  margin-top: 0;
+  margin-right: auto;
+  margin-bottom: 50px;
 }
 
 // solid
@@ -218,6 +241,7 @@
     padding-left: 10px; 
     padding-right: 10px;
     padding-bottom: 20px;
+    background-color: rgb(252, 252, 252);
   }
 }
 
@@ -268,4 +292,8 @@
   &:before {
     content: url('../../static/images/contactsIcons/phone.svg');
   }
+}
+
+.gm-style {
+  overflow: hidden;
 }

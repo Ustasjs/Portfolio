@@ -16,14 +16,19 @@ import Burger from '../../components/burger_menu/burger_menu.js';
 import ArrowScroll from '../../scripts/arrow_scroll';
 import AsideMenu from '../../scripts/aside_menu';
 import ParallaxScroll from '../../scripts/parallax_scroll';
+import Articles from '../../scripts/fetchData/blog';
 // media
 import '../../static/styles/layout/settingsMedia.scss';
 
+// fetch data
+
 document.addEventListener('DOMContentLoaded', () => {
 
-  new Burger().init();
-  new ArrowScroll().init();
-  new AsideMenu().init();
-  new ParallaxScroll().init();
-
+  new Articles().init()
+    .then(() => {
+      new Burger().init();
+      new ArrowScroll().init();
+      new AsideMenu().init();
+      new ParallaxScroll().init();
+    })
 })

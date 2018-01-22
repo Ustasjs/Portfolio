@@ -28,6 +28,7 @@
   height: 420px;
   transition: all 0.3s;
   transform-origin: center center;
+  //backface-visibility: hidden;
   @include tablet {
     width: 360px;
     height: 410px;
@@ -46,7 +47,8 @@
   display: flex;
   justify-content: flex-end;
   min-height: 70px;
-  padding: 20px;
+  padding-top: 20px;
+  padding-right: 20px;
 
   @include hugeScreen {
     padding-left: 100px;
@@ -112,6 +114,10 @@
   position: absolute;
   top: 0;
   left: 0;
+}
+
+.main__hero_hidden {
+  opacity: 0;
 }
 
 .hero__main {

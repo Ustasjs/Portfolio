@@ -18,6 +18,7 @@ import Circles from '../../components/circles/circles.js';
 // scripts
 import ArrowScroll from '../../scripts/arrow_scroll';
 import ParralaxScroll from '../../scripts/parallax_scroll';
+import Skills from '../../scripts/fetchData/skills';
 // media
 import '../../static/styles/layout/settingsMedia.scss';
 import '../../static/styles/baseMedia.scss';
@@ -25,11 +26,15 @@ import '../../static/styles/baseMedia.scss';
 import Map from '../../scripts/map';
 
 document.addEventListener('DOMContentLoaded', () => {
-
   Map.makeMap();
-  new Burger().init();
-  new ArrowScroll().init();
-  new ParralaxScroll().init();
-  new Circles().init();
+
+  new Skills().init()
+    .then(() => {
+      Map.makeMap();
+      new Circles().init();
+      new Burger().init();
+      new ArrowScroll().init();
+      new ParralaxScroll().init();
+    })
 
 })

@@ -7,15 +7,16 @@ mixin socials(type, className)
         else
           include ./icons/fb.svg
     li.social__item
+      a.social__icon(target="_blank", rel="nofollow noopener", href="https://t.me/U_stas")
+        if type == 'round'
+          include ./icons/telegram_round.svg
+        else
+          include ./icons/telegram.svg
+    li.social__item
       a.social__icon.social__icon_gh(target="_blank", rel="nofollow noopener", href="https://github.com/Ustasjs")
         if type == 'round'
           include ./icons/github_round.svg
         else
           include ./icons/github.svg
         
-    li.social__item
-      a.social__icon(target="_blank", rel="nofollow noopener", href="https://ru.linkedin.com")
-        if type == 'round'
-          include ./icons/in_round.svg
-        else
-          include ./icons/in.svg
+    

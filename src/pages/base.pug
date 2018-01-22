@@ -11,7 +11,7 @@ html(lang="ru-RU")
       .modal#modal
         .modal__left
         include ../components/nav_list/nav_list.pug
-        -var links = [{path: 'portfolio.html', content:'Мои работы'}, {path:'about.html', content:'Обо мне'}, {path:'blog.html', content:'Блог'}, {path:'index.html', content:'Авторизация'}]
+        -var links = [{path: 'portfolio', content:'Мои работы'}, {path:'about', content:'Обо мне'}, {path:'blog', content:'Блог'}, {path:'/', content:'Авторизация'}]
         +navList(links, 'modal__nav nav_vertical modal__nav_hidden')
         .modal__right
       include ../components/burger_menu/burger_menu.pug

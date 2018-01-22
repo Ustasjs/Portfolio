@@ -1,39 +1,18 @@
-const slidesInfo = [
-  {
-    title: 'Работа 1',
-    url: '../../static/images/slider/work-1.png',
-    stack: 'HTML, CSS, JavaScript',
-    link: 'https://www.google.com/'
-  },
-  {
-    title: 'Работа 2',
-    url: '../../static/images/slider/work-2.png',
-    stack: 'HTML, CSS, Ruby',
-    link: 'https://www.google.com/'
-  },
-  {
-    title: 'Работа 3',
-    url: '../../static/images/slider/work-3.png',
-    stack: 'HTML, CSS, Python',
-    link: 'https://www.google.com/'
-  },
-  {
-    title: 'Работа 4',
-    url: '../../static/images/slider/work-4.png',
-    stack: 'HTML, CSS, C++',
-    link: 'https://www.google.com/'
-  },
-]
-
 class Slider {
 
+  constructor(data) {
+    this.slidesInfo = data;
+  }
+
   init() {
+    if (this.slidesInfo === undefined) {
+      return;
+    }
+
     const slider = document.getElementById('slider');
     const mainSlides = document.querySelectorAll('.slider__main-wrap');
     const upButtonSlides = document.querySelectorAll('.slider__list_up .slider__wrap');
     const downButtonSlides = document.querySelectorAll('.slider__list_down .slider__wrap');
-    const buttonUp = document.querySelector('.slider__button_up');
-    const buttonDown = document.querySelector('.slider__button_down');
 
     slider.addEventListener('click', (e) => {
       const target = e.target;
@@ -41,19 +20,19 @@ class Slider {
       const upActiveElement = document.querySelector('.slider__list_up .slider__wrap_active');
       const downActiveElement = document.querySelector('.slider__list_down .slider__wrap_active');
 
-      switch (target) {
-        case buttonUp:
-          this.moveHandler(upButtonSlides, 'second', upActiveElement, 'slider__wrap', 'up');
-          this.moveHandler(downButtonSlides, 'second', downActiveElement, 'slider__wrap', 'up');
-          this.moveHandler(mainSlides, 'main', mainActiveElement, 'slider__main-wrap', 'up');
-          break;
-        case buttonDown:
-          this.moveHandler(upButtonSlides, 'second', upActiveElement, 'slider__wrap', 'down');
-          this.moveHandler(downButtonSlides, 'second', downActiveElement, 'slider__wrap', 'down');
-          this.moveHandler(mainSlides, 'main', mainActiveElement, 'slider__main-wrap', 'down');
-          break;
-        default: return;
+      if (target.closest('.slider__button_up') !== null) {
+        this.moveHandler(upButtonSlides, 'second', upActiveElement, 'slider__wrap', 'up');
+        this.moveHandler(downButtonSlides, 'second', downActiveElement, 'slider__wrap', 'up');
+        this.moveHandler(mainSlides, 'main', mainActiveElement, 'slider__main-wrap', 'up');
       }
+
+      if (target.closest('.slider__button_down') !== null) {
+        this.moveHandler(upButtonSlides, 'second', upActiveElement, 'slider__wrap', 'down');
+        this.moveHandler(downButtonSlides, 'second', downActiveElement, 'slider__wrap', 'down');
+        this.moveHandler(mainSlides, 'main', mainActiveElement, 'slider__main-wrap', 'down');
+      }
+
+      return;
     })
   }
 
@@ -85,13 +64,16 @@ class Slider {
   handleInfoRefresh(currentActiveIndex) {
     const heading = document.getElementById('headingContent');
     const stack = document.getElementById('stackContent');
+    const description = document.getElementById('description');
     const link = document.getElementById('infoLink');
-    const newHeadingContent = slidesInfo[currentActiveIndex].title;
-    const newStackContent = slidesInfo[currentActiveIndex].stack;
-    const newUrl = slidesInfo[currentActiveIndex].link;
+    const newHeadingContent = this.slidesInfo[currentActiveIndex].name;
+    const newStackContent = this.slidesInfo[currentActiveIndex].stack;
+    const newDescription = this.slidesInfo[currentActiveIndex].description;
+    const newUrl = this.slidesInfo[currentActiveIndex].link;
 
     heading.textContent = newHeadingContent;
     stack.textContent = newStackContent;
+    description.textContent = newDescription;
 
     link.setAttribute('href', newUrl);
   }

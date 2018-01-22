@@ -7,7 +7,8 @@
   "scripts": {
     "start": "webpack-dev-server --env development",
     "serv": "static build",
-    "build": "webpack --env production"
+    "build": "webpack --env production",
+    "dem": "webpack --env demonstration"
   },
   "devDependencies": {
     "autoprefixer": "^7.2.1",

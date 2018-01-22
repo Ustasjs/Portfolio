@@ -9,14 +9,14 @@ block main
   .main.welcome__main
     #flipper.flip-container
       .flip
-        .hero.main__hero
+        #hero.hero.main__hero
           .hero__main
             include ../../components/user/user
             +user()
             include ../../components/socials/socials.pug
             +socials('common', 'socials_color_green')
           include ../../components/nav_list/nav_list.pug
-          -var links = [{path: 'portfolio.html', content:'Мои работы'}, {path:'about.html', content:'Обо мне'}, {path:'blog.html', content:'Блог'}]
+          -var links = [{path: 'portfolio', content:'Мои работы'}, {path:'about', content:'Обо мне'}, {path:'blog', content:'Блог'}]
           +navList(links, 'nav_color_green nav_horizontal')
         .auth.main__auth
           .auth__main
@@ -24,24 +24,24 @@ block main
               .heading__content Авторизуйтесь
             form#authForm.auth__form(action="POST")
               .auth__input-wrap.auth__input-wrap_login
-                input#login.auth__input(placeholder="Логин")
+                input#login.auth__input(placeholder="Логин", name="login")
                 .auth__icon
                   include ../../static/images/otherIcons/login.svg
               .auth__input-wrap.auth__input-wrap_password
-                input#password.auth__input(placeholder="Пароль")
+                input#password.auth__input(placeholder="Пароль", name="password", type="password")
                 .auth__icon
                   include ../../static/images/otherIcons/password.svg 
               label.auth__label
-                input.auth__checkbox(type="checkbox")
-                .auth__custom-checkbox
+                input.auth__checkbox(type="checkbox", name="humanCheck")
+                #styledHumanCheck.auth__custom-checkbox
                 span.auth__label-text Я человек
               .auth__question Вы точно не робот?
               .auth__question-wrap
                 label.auth__label
-                  input.auth__radio(type="radio", name="question", value="Yes")
+                  input#radioYes.auth__radio(type="radio", name="question", value="Yes")
                   .auth__custom-radio
                   span.auth__label-text Да
-                label.auth__label
+                label#radioNo.auth__label
                   input.auth__radio(type="radio", name="question", value="No")
                   .auth__custom-radio
                   span.auth__label-text Не уверен

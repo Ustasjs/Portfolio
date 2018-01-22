@@ -15,10 +15,12 @@ const commonConfig = {
     index: PATHS.source + '/pages/index/index.js',
     blog: PATHS.source + '/pages/blog/blog.js',
     about: PATHS.source + '/pages/about/about.js',
-    portfolio: PATHS.source + '/pages/portfolio/portfolio.js'
+    portfolio: PATHS.source + '/pages/portfolio/portfolio.js',
+    notFoundPage: PATHS.source + '/pages/notFoundPage/notFoundPage.js'
   },
   output: {
     path: PATHS.build,
+    publicPath: '/',
     filename: 'js/[name].js'
   },
 
@@ -27,29 +29,30 @@ const commonConfig = {
       filename: 'index.html',
       chunks: ['index', 'common'],
       template: PATHS.source + '/pages/index/index.pug',
-      inject: 'head',
-      //favicon: PATHS.source + '/static/images/fav_mount.png'
+      inject: 'head'
     }),
     new HtmlWebpackPlugin({
       filename: 'blog.html',
       chunks: ['blog', 'common'],
       template: PATHS.source + '/pages/blog/blog.pug',
-      inject: 'head',
-      //favicon: PATHS.source + '/static/images/fav_mount.png'
+      inject: 'head'
     }),
     new HtmlWebpackPlugin({
       filename: 'about.html',
       chunks: ['about', 'common'],
       template: PATHS.source + '/pages/about/about.pug',
-      inject: 'head',
-      //favicon: PATHS.source + '/static/images/fav_mount.png'
+      inject: 'head'
     }),
     new HtmlWebpackPlugin({
       filename: 'portfolio.html',
       chunks: ['portfolio', 'common'],
       template: PATHS.source + '/pages/portfolio/portfolio.pug',
       inject: 'head',
-      //favicon: PATHS.source + '/static/images/fav_mount.png'
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'notFoundPage.html',
+      template: PATHS.source + '/pages/notFoundPage/notFoundPage.pug',
+      chunks: ['notFoundPage', 'common'],
     }),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'common'
@@ -145,9 +148,28 @@ const developmentConfig = {
     ]
   },
 
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify('development'),
+    })
+  ],
+
   devServer: {
     open: true,
-    port: 9000
+    port: 9000,
+    setup(app) {
+      app.get('/portfolio', (req, res) => {
+        res.redirect('/portfolio.html')
+      });
+
+      app.get('/about', (req, res) => {
+        res.redirect('/about.html')
+      });
+
+      app.get('/blog', (req, res) => {
+        res.redirect('/blog.html')
+      });
+    }
   }
 };
 
@@ -182,12 +204,34 @@ const productionConfig = {
     ]
   },
 
-  plugins: [new ExtractTextPlugin('./css/[name].css'), new webpack.optimize.UglifyJsPlugin()]
+  plugins: [
+    new ExtractTextPlugin('./css/[name].css'),
+    new webpack.optimize.UglifyJsPlugin()
+  ]
 };
+
+const productionEnv = {
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify('production'),
+    })
+  ]
+}
+
+const demonstrationEnv = {
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify('demonstration'),
+    })
+  ]
+}
 
 module.exports = function (env) {
   if (env === 'production') {
-    return merge(commonConfig, productionConfig);
+    return merge(commonConfig, productionConfig, productionEnv);
+  }
+  if (env === 'demonstration') {
+    return merge(commonConfig, productionConfig, demonstrationEnv);
   }
   if (env === 'development') {
     return merge(commonConfig, developmentConfig);
