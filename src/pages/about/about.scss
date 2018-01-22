@@ -65,6 +65,8 @@
   }
 }
 
+
+
 .info__main {
   margin-right: 13.3%;
   margin-left: 13.3%;
@@ -102,6 +104,9 @@
 }
 
 .info__wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   margin-top: 35px;
   margin-bottom: 25px;
   margin-left: auto;
@@ -110,12 +115,17 @@
   height: 390px;
   overflow: hidden;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: flex-start;
   @include tablet {
     width: 100%;
     height: auto;
   }
+}
+
+.info__img {
+  max-width: 90%;
 }
 
 .info__content {

@@ -26,6 +26,7 @@ import '../../static/styles/baseMedia.scss';
 import Map from '../../scripts/map';
 
 document.addEventListener('DOMContentLoaded', () => {
+  Map.makeMap();
 
   new Skills().init()
     .then(() => {

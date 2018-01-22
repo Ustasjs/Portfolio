@@ -68,7 +68,7 @@ class AsideMenu {
     }
 
     if (this.articles.length === 1) {
-      this.articles[0].classList.add('content__link_active');
+      this.articlesLinks[0].classList.add('content__link_active');
     } else {
       const articlesBottomCoords = [].map.call(this.articles, currentElement => this.getVerticalCoords(currentElement).bottom);
       const currentScroll = window.pageYOffset;
